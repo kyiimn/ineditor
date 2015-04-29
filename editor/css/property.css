@@ -1,0 +1,91 @@
+.property-box {
+	border-left: 1px solid #454545;
+	overflow: hidden;
+	width: 320px;
+}
+
+.property-box .property-list-box {
+	border-right: 1px solid #141414;
+	display: inline-block;
+	float: left;
+	width: 40px;
+	height: 100%;
+}
+
+.property-box .property-body-box {
+	border-left: 1px solid #454545;
+	display: inline-block;
+	-padding: 6px 24px 6px 6px;
+	overflow-y: auto;
+	padding: 6px;
+	-height: 100%;
+}
+
+.property-box.collapse {
+	width: 40px;
+	max-width: 40px;
+}
+
+.property-box.collapse .property-body-box {
+	overflow: hidden;
+	width: 0px;
+}
+
+.property-box .property-list-box .button {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	margin: 2px;
+	width: 32px;
+	height: 32px;
+}
+
+.property-box .property-list-box .button:hover {
+	background-color: #292929;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.property-box .property-list-box .button.selected {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.property-box .property-body-box .title {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.property-box .property-body-box .subtitle {
+	font-size: 12px;
+}
+
+.property-box .property-body-box .field {
+	margin-bottom: 4px;
+}
+
+.property-box .property-body-box .field label {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 4px;
+	text-align: left;
+	width: 64px;
+}
+
+.property-box .property-body-box .field input,
+.property-box .property-body-box .field select {
+	background-color: #3e3e3e;
+	border: 1px solid #777;
+	font-size: 10px;
+}
+
+.property-box .property-body-box hr {
+	border-color: #777;
+	border-style: solid;
+	border-width: 1px 0 0;
+	margin: 5px 0;
+}

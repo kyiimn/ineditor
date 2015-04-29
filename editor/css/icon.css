@@ -1,0 +1,60 @@
+.button[data-action="tool-select"] {
+	background-image: url('../images/icon/tool-select.png');
+}
+
+.button[data-action="tool-box"] {
+	background-image: url('../images/icon/tool-box.png');
+}
+
+.button[data-action="tool-text"] {
+	background-image: url('../images/icon/tool-text.png');
+}
+
+.button[data-action="tool-image"] {
+	background-image: url('../images/icon/tool-image.png');
+}
+
+.button[data-action="tool-audio"] {
+	background-image: url('../images/icon/tool-audio.png');
+}
+
+.button[data-action="tool-video"] {
+	background-image: url('../images/icon/tool-video.png');
+}
+
+.button[data-action="tool-link"] {
+	background-image: url('../images/icon/tool-link.png');
+}
+
+.button[data-action="tool-delete"] {
+	background-image: url('../images/icon/func-delete.png');
+}
+
+
+.button[data-action="func-new"] {
+	background-image: url('../images/icon/func-new.png');
+}
+
+.button[data-action="func-open"] {
+	background-image: url('../images/icon/func-open.png');
+}
+
+.button[data-action="func-save"] {
+	background-image: url('../images/icon/func-save.png');
+}
+
+.button[data-action="func-save-as"] {
+	background-image: url('../images/icon/func-save-as.png');
+}
+
+.button[data-action="func-preview"] {
+	background-image: url('../images/icon/func-preview.png');
+}
+
+.button[data-action="func-delete"] {
+	background-image: url('../images/icon/func-delete.png');
+}
+
+.button[data-action="func-publish"] {
+	background-image: url('../images/icon/func-publish.png');
+}

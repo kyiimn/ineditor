@@ -1,0 +1,34 @@
+.save-doc-dlg .field label {
+	margin-right: 4px;
+}
+
+.save-doc-dlg .field label {
+	display: inline-block;
+	font-size: 12px;
+	text-align: right;
+	width: 70px;
+}
+
+.save-doc-dlg .field {
+	margin-bottom: 4px;
+}
+
+.save-doc-dlg .field input {
+	border: 1px solid #777;
+	font-size: 12px;
+	width: 244px;
+}
+
+.save-doc-dlg .preview {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	width: 328px;
+	height: 328px;
+	border: 1px solid #777;
+}
+
+.save-doc-dlg .preview img {
+	width: 100%;
+	border: none;
+	float: left;
+}

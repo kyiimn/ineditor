@@ -1,0 +1,163 @@
+.ia-event-style .field input {
+	width: 273px;
+}
+
+.ia-event-style .field select {
+	width: 277px;
+}
+
+.ia-event-style .field:nth-child(1) input {
+	width: 228px;
+}
+
+.ia-event-style button#ia-event-style-targetobj-select {
+	margin-left: 5px;
+	width: 40px;
+}
+
+.ia-event-style button:hover {
+	background-color: #555;
+}
+
+.ia-event-style button:active {
+	background-color: #777;
+}
+
+.ia-event-style .ia-event-style-list {
+	border: 0;
+	border-spacing: 0;
+	-border: 1px solid #777;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: auto;
+	table-layout: fixed;
+}
+
+.ia-event-style .ia-event-style-list tr {
+	border-spacing: 0;
+}
+
+.ia-event-style .ia-event-style-list tr td:nth-child(1),
+.ia-event-style .ia-event-style-list tr th:nth-child(1) {
+	border-left: 1px solid #777;
+}
+
+.ia-event-style .ia-event-style-list tr td,
+.ia-event-style .ia-event-style-list tr th {
+	background-color: transparent;
+	border-spacing: 0;
+	border-right: 1px solid #777;
+	cursor: default;
+	-display: inline-block;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ia-event-style .ia-event-style-list tr th {
+	background-color: #555;
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 2px 4px;
+}
+
+.ia-event-style .ia-event-style-list tr td {
+	border-bottom: 1px solid #777;
+	font-size: 11px;
+	padding: 4px;
+}
+
+.ia-event-style .ia-event-style-list tr th:nth-child(1),
+.ia-event-style .ia-event-style-list tr td:nth-child(1) {
+	text-align: center;
+	width: 119px;
+}
+
+.ia-event-style .ia-event-style-list tr th:nth-child(2),
+.ia-event-style .ia-event-style-list tr td:nth-child(2),
+.ia-event-style .ia-event-style-list tr th:nth-child(4) {
+	text-align: center;
+	width: 70px;
+}
+
+.ia-event-style .ia-event-style-list tr th:nth-child(3),
+.ia-event-style .ia-event-style-list tr td:nth-child(3),
+.ia-event-style .ia-event-style-list tr th:nth-child(5) {
+	text-align: center;
+	width: 28px;
+}
+
+.ia-event-style .ia-event-style-list tr td:nth-child(4) {
+	height: 21px;
+	width: 78px;
+}
+
+.ia-event-style .ia-event-style-list tr td:nth-child(5) {
+	height: 21px;
+	width: 36px;
+}
+
+.ia-event-style .ia-event-style-list tr td:nth-child(4),
+.ia-event-style .ia-event-style-list tr td:nth-child(5) {
+	padding: 0px;
+}
+
+.ia-event-style .ia-event-style-list tr td .value {
+	background-color: transparent;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.ia-event-style .ia-event-style-list tbody tr:hover {
+	background-color: #2a2a2a;
+}
+
+.ia-event-style .ia-event-style-list tbody tr.selected {
+	background-color: #141414;
+}
+
+.ia-event-style .footer {
+	background-color: #555;
+	border-color: #777;
+	border-style: solid;
+	border-width: 0 1px 1px;
+	height: 20px;
+}
+
+.ia-event-style .button {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	margin: 1px;
+	width: 16px;
+	height: 16px;
+}
+
+.ia-event-style .button:hover {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.button#btn-ia-event-style-footer-add {
+	background-image: url('../../../images/property/event/list-add.png');
+}
+
+.button#btn-ia-event-style-footer-delete {
+	background-image: url('../../../images/property/event/list-delete.png');
+}
+
+.button#btn-ia-event-style-footer-detect {
+	background-image: url('../../../images/property/event/list-detect.png');
+	float: right;
+}

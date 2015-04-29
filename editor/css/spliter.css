@@ -1,0 +1,57 @@
+.x-spliter, .y-spliter {
+	background-color: #262626;
+}
+
+.x-spliter {
+	border-left: 1px solid #454545;
+	border-right: 1px solid #141414;
+	display: inline-block;
+	float: left;
+	height: 100%;
+	width: 8px;
+}
+
+.x-spliter .collapser {
+	background-color: #141414;
+	border-top: 1px solid #454545;
+	border-bottom: 1px solid #454545;
+	cursor: pointer;
+	display: inline-block;
+	height: 72px;
+	width: 100%;
+}
+
+.x-spliter.left {
+	cursor: w-resize;
+}
+
+.x-spliter.right {
+	cursor: e-resize;
+}
+
+.y-spliter {
+	border-top: 1px solid #141414;
+	border-bottom: 1px solid #141414;
+	cursor: n-resize;
+	display: block;
+	height: 8px;
+	width: 100%;
+}
+
+.y-spliter .collapser {
+	background-color: #141414;
+	border-left: 1px solid #454545;
+	border-right: 1px solid #454545;
+	cursor: pointer;
+	display: inline-block;
+	height: 100%;
+	width: 72px;
+}
+
+.y-spliter.up {
+	cursor: n-resize;
+}
+
+.y-spliter.down {
+	cursor: s-resize;
+}

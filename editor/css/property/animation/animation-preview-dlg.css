@@ -1,0 +1,38 @@
+.ia-animation-preview .field input {
+	width: 282px;
+}
+
+.ia-animation-preview .field input#ia-animation-preview-targetobj {
+	width: 236px;
+}
+
+.ia-animation-preview button#ia-animation-preview-targetobj-select {
+	margin-left: 5px;
+	width: 40px;
+}
+
+.ia-animation-preview button:hover {
+	background-color: #555;
+}
+
+.ia-animation-preview button:active {
+	background-color: #777;
+}
+
+.ia-animation-preview .button {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	margin: 1px;
+	width: 16px;
+	height: 16px;
+}
+
+.ia-animation-preview .button:hover {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}

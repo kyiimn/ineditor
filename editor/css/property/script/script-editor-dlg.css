@@ -1,0 +1,23 @@
+.ia-script-editor .field input {
+	width: 522px;
+}
+
+.ia-script-editor .field textarea {
+	background-color: #000;
+	border: 1px solid #777;
+	color: #eee;
+	font-family: 'Courier', 'Gulimche', 'Fixedsys';
+	font-size: 12px;
+	resize: none;
+	width: 596px;
+	height: 338px;
+}
+
+.ia-script-editor .help {
+	background-color: #282828;
+	border: 1px solid #777;
+	font-size: 9pt;
+	margin-bottom: 4px;
+	line-height: 140%;
+	padding: 4px;
+}

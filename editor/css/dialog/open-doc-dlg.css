@@ -1,0 +1,146 @@
+.open-doc-dlg label {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 4px;
+	text-align: right;
+	width: 70px;
+}
+
+.open-doc-dlg .field {
+	margin-bottom: 4px;
+}
+
+.open-doc-dlg .field input {
+	border: 1px solid #777;
+	font-size: 12px;
+}
+
+.open-doc-dlg .field input {
+	width: 252px;
+}
+
+.open-doc-dlg .open-doc-header,
+.open-doc-dlg .open-doc-list {
+	border: 0;
+	border-spacing: 0;
+	-border: 1px solid #777;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: auto;
+	table-layout: fixed;
+}
+
+.open-doc-dlg .open-doc-header tr,
+.open-doc-dlg .open-doc-list tr {
+	border-spacing: 0;
+}
+
+.open-doc-dlg .open-doc-header tr th:nth-child(1) {
+	border-left: 1px solid #777;
+}
+
+.open-doc-dlg .open-doc-header tr th,
+.open-doc-dlg .open-doc-list tr td {
+	background-color: transparent;
+	border-spacing: 0;
+	border-right: 1px solid #777;
+	cursor: default;
+	-display: inline-block;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.open-doc-dlg .open-doc-header tr th {
+	background-color: #555;
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 2px;
+}
+
+.open-doc-dlg .open-doc-list tr td {
+	border-bottom: 1px solid #777;
+	font-size: 11px;
+	padding: 2px;
+}
+
+.open-doc-dlg .open-doc-header tr th:nth-child(1) {
+	width: 155px;
+}
+.open-doc-dlg .open-doc-list tr td:nth-child(1) {
+	padding-left: 6px;
+	width: 151px;
+}
+
+.open-doc-dlg .open-doc-header tr th:nth-child(2),
+.open-doc-dlg .open-doc-list tr td:nth-child(2) {
+	text-align: center;
+	width: 100px;
+}
+
+.open-doc-dlg .open-doc-header tr th:nth-child(3),
+.open-doc-dlg .open-doc-list tr td:nth-child(3) {
+	text-align: center;
+	width: 89px;
+}
+
+.open-doc-dlg .open-doc-list tr td:nth-child(3) {
+	border-right: 0;
+}
+
+.open-doc-dlg tbody tr:hover {
+	background-color: #292929;
+}
+
+.open-doc-dlg tbody tr.selected {
+	background-color: #141414;
+}
+
+.open-doc-dlg .open-doc-list-scroll {
+	border-left: 1px solid #777;
+	border-bottom: 1px solid #777;
+	height: 310px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.open-doc-dlg .side {
+	float: left;
+}
+
+.open-doc-dlg .right-side {
+	margin-left: 5px;
+}
+
+.open-doc-dlg .open-doc-preview {
+	width: 328px;
+	height: 328px;
+	border: 1px solid #777;
+	display: inline-block;
+}
+
+.open-doc-dlg .open-doc-preview.portrait {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.open-doc-dlg .open-doc-preview.landscape {
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.open-doc-dlg .open-doc-preview img {
+	border: none;
+	float: left;
+}
+
+.open-doc-dlg .open-doc-preview.portrait img {
+	width: 100%;
+}
+
+.open-doc-dlg .open-doc-preview.landscape img {
+	height: 100%;
+}

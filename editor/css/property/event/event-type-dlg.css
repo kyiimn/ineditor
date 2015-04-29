@@ -1,0 +1,8 @@
+.ia-event-type .field input#ia-event-type-position {
+	width: 96px;
+}
+
+.ia-event-type .field select#ia-event-type-position-unit {
+	margin-left: 4px;
+	width: 40px;
+}

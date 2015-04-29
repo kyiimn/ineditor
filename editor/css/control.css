@@ -1,0 +1,247 @@
+.control-box {
+	border-right: 1px solid #141414;
+	width: 320px;
+}
+
+.control-box.collapse {
+    width: 0px;
+}
+
+.control-box .el-tool {
+	border-bottom: 1px solid #141414;
+	height: 34px;
+	list-style: none;
+	margin: 0;
+	padding: 6px;
+	text-align: center;
+}
+
+.control-box .el-tool li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.control-box .el-tool .button {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+
+.control-box .el-tool .button.touch {
+	display: none;
+}
+
+.x-touch .control-box .el-tool .button.touch {
+	display: inline-block;
+}
+
+.control-box .el-tool .button:hover {
+	background-color: #292929;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.control-box .el-tool .button.selected {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.control-box .el-control {
+	background-color: #2a2a2a;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.control-box .el-data-box {
+	padding: 6px;
+}
+
+.control-box .el-data > *,
+.control-box .el-attr > * {
+	border-top: 1px solid #454545;
+	border-bottom: 1px solid #141414;
+}
+
+.control-box .el-attr-box {
+	padding: 6px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.control-box .el-attr-box .el-attr-body {
+	overflow: hidden;
+	transition: all .3s;
+}
+
+.control-box .el-attr-box .collapser {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+	height: 20px;
+	width: 100%;
+}
+
+.control-box .el-attr-box .collapser .status {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 0px;
+	border-bottom: 8px solid #eee;
+	display: inline-block;
+	margin-left: 4px;
+	width: 0;
+	height: 0;
+	transition: all .3s;
+}
+
+.control-box .el-attr-box.collapse .collapser .status {
+	transform: rotate(180deg);
+}
+
+
+.control-box #el-attr-layout.el-attr-box .el-attr-body {
+	height: 440px;
+}
+
+.control-box #el-attr-style.el-attr-box .el-attr-body {
+	height: 490px;
+}
+
+.control-box #el-attr-style.el-attr-box.box .el-attr-body {
+	height: 310px;
+}
+
+.control-box #el-attr-style.el-attr-box.image .el-attr-body {
+	height: 265px;
+}
+
+.control-box #el-attr-layout.el-attr-box.collapse .el-attr-body,
+.control-box #el-attr-style.el-attr-box.collapse .el-attr-body,
+.control-box #el-attr-effect.el-attr-box.collapse .el-attr-body {
+	height: 0px;
+}
+
+.control-box .el-attr-box .field {
+	display: inline-block;
+	float: left;
+	margin-top: 8px;
+	width: 100%;
+	height: 17px;
+}
+
+.control-box .el-attr-box .field.continue {
+	margin-top: 2px;
+}
+
+.control-box .el-attr-box .field * {
+	float: left;
+}
+
+.control-box .el-attr-box .field *:first-child {
+	clear: both;
+}
+
+.control-box .el-attr-box .field label {
+	display: inline-block;
+	font-size: 10px;
+	font-style: italic;
+	font-weight: bold;
+	margin: 2px 6px 0 0;
+	text-align: right;
+	width: 60px;
+}
+
+.control-box .el-attr-box .field label.sub {
+	font-size: 9px;
+	font-style: normal;
+	font-weight: normal;
+	margin: 3px 2px 0 0;
+	text-align: right;
+	width: 16px;
+}
+
+.control-box .el-attr-box .field input,
+.control-box .el-attr-box .field select {
+	background-color: #3b3b3b;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #777;
+	font-size: 10px;
+}
+
+.control-box .el-attr-box .field input {
+	padding-right: 4px;
+	height: 13px;
+}
+
+.control-box .el-attr-box .field select {
+	height: 16px;
+	text-align: center;
+}
+
+.control-box .el-attr-box .field input[type=number],
+.control-box .el-attr-box .field input.number {
+	text-align: right;
+}
+
+.control-box .el-attr-box .field input.small {
+	width: 43px;
+}
+
+.control-box .el-attr-box .field input.middle {
+	width: 87px;
+}
+
+.control-box .el-attr-box .field select.middle {
+	width: 93px;
+}
+
+.control-box .el-attr-box .field input.big {
+	width: 199px;
+}
+
+.control-box .el-attr-box .field select.big {
+	width: 204px;
+}
+
+.control-box .el-attr-box .field input.with-button {
+	width: 122px;
+}
+
+.control-box .el-attr-box .field input.with-unit {
+	width: 154px;
+}
+
+.control-box .el-attr-box .field select.unit {
+	border-width: 1px;
+	margin-left: 4px;
+	width: 40px;
+}
+
+.control-box .el-attr-box .field button {
+	border: 1px solid #777;
+	font-size: 9px;
+	margin-left: 4px;
+	padding: 0px 2px;
+	width: 48px;
+	height: 16px;
+}
+
+.control-box .el-attr-box .field button.small {
+	width: 20px;
+}
+
+.control-box .el-attr-box .field button:hover {
+	background-color: #555;
+}
+
+.control-box .el-attr-box .field button:active {
+	background-color: #777;
+}

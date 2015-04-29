@@ -1,0 +1,124 @@
+.dlg-modal {
+	opacity: 0.7;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 16777270;
+}
+
+.dlg-modal.hidden {
+	display: none;
+}
+
+.dlg-movearea {
+	background-color: transparent;
+	background-image: url(../images/editor/transparent.png);
+	background-repeat: repeat;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 16777271;
+}
+
+.dlg {
+	border: 1px solid #111;
+	border-radius: 5px;
+	box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.75);
+	position: fixed;
+	z-index: 16777270;
+}
+
+.dlg-titlebar {
+	background-color: #555;
+	border: 1px solid #666;
+	border-radius: 5px;
+	height: 16px;
+	margin: 5px;
+	padding: 3px 6px;
+}
+
+.dlg-titlebar span {
+	background-color: transparent;
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: default;
+}
+
+.dlg-titlebar-close {
+	background-color: transparent;
+	background-image: url('../images/dialog/close.png');
+	border: 1px solid transparent;
+	display: inline-block;
+	float: right;
+	width: 14px;
+	height: 14px;
+}
+
+.dlg-titlebar-close:hover {
+	background-color: #666;
+	border: 1px solid #777;
+}
+
+.dlg-body {
+	border-radius: 5px;
+	padding: 0px 5px 5px 5px;
+}
+
+.dlg-body .dlg-content {
+	width: 100%;
+	height: 100%;
+}
+
+.dlg-body .dlg-content button {
+	background-color: #414141;
+	border: 1px solid #777;
+	border-radius: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 1px 3px;
+}
+
+.dlg-body .dlg-content button:hover {
+	background-color: #555;
+}
+
+.dlg-body .dlg-content button:active {
+	background-color: #666;
+}
+
+.dlg-body .dlg-content button.hidden {
+	display: none;
+}
+
+.dlg-body .dlg-content .buttonset {
+	margin-top: 4px;
+	text-align: center;
+}
+
+.dlg-body .dlg-content .buttonset button {
+	margin-right: 8px;
+}
+
+.x-touch .dlg-body .dlg-content .buttonset button {
+	padding: 4px 8px;
+	margin-right: 8px;
+}
+
+.dlg-body .dlg-content hr {
+	border-color: #777;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	margin: 5px 0;
+}
+
+.dlg-body .dlg-content .msg {
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}

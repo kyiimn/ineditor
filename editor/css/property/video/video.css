@@ -1,0 +1,101 @@
+.ia-video-title {
+	margin-bottom: 4px;
+}
+
+.ia-video-tool {
+	height: 29px;
+	list-style: outside none none;
+	margin: 0 0 4px;
+	overflow: hidden;
+	padding: 0;
+}
+
+.ia-video-tool li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.ia-video-tool .button {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	margin: 2px;
+	width: 24px;
+	height: 24px;
+}
+
+.ia-video-tool .button:hover {
+	background-color: #292929;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-video-tool .button.selected {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-video-tool .separator {
+	border-left: 1px solid #454545;
+	border-right: 1px solid #141414;
+	display: inline-block;
+	margin: 2px;
+	width: 0px;
+	height: 24px;
+}
+
+.button#btn-ia-video-tool-input {
+	background-image: url('../../../images/property/video/tool-add.png');
+}
+
+.button#btn-ia-video-tool-search {
+	background-image: url('../../../images/property/video/tool-search.png');
+}
+
+.ia-video-preview {
+	background-color: #101010;
+	border: 1px solid #777;
+	display: inline-block;
+	height: 250px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.ia-video-preview .video-body {
+	border: 0px;
+}
+
+.ia-video-dlg label {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 4px;
+	text-align: right;
+	width: 70px;
+}
+
+.ia-video-dlg .field {
+	margin-bottom: 4px;
+}
+
+.ia-video-dlg .field.hidden {
+	display: none;
+}
+
+.ia-video-dlg .field input,
+.ia-video-dlg .field select {
+	border: 1px solid #777;
+	font-size: 12px;
+}
+
+.ia-video-dlg .field input {
+	width: 150px;
+}
+
+.ia-video-dlg .field select {
+	width: 154px;
+}

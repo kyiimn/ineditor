@@ -1,0 +1,35 @@
+.editor-area.landscape {
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.editor-area.portrait {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.editor {
+	-background-image: url("../images/editor/bg.png");
+	-background-repeat: repeat-x repeat-y;
+	cursor: crosshair;
+	position: relative;
+	min-width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.landscape .editor {
+	max-height: 100%;
+}
+
+.portrait .editor {
+	max-width: 100%;
+}
+
+.editor .guide {
+	background-color: transparent;
+	border: 1px dotted #000;
+	cursor: crosshair;
+	position: absolute;
+	z-index: 5555;
+}

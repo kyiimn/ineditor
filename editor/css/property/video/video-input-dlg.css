@@ -1,0 +1,17 @@
+.ia-video-input .field input {
+	width: 338px;
+}
+
+.ia-video-input .field select {
+	width: 342px;
+}
+
+.ia-video-input .help {
+	background-color: #282828;
+	border: 1px solid #777;
+	font-size: 9pt;
+	margin-bottom: 4px;
+	line-height: 140%;
+	padding: 4px;
+	width: 406px;
+}

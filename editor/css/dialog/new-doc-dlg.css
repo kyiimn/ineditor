@@ -1,0 +1,56 @@
+.new-doc-dlg .field label {
+	margin-right: 4px;
+}
+
+.new-doc-dlg .field label:first-child {
+	display: inline-block;
+	font-size: 12px;
+	text-align: right;
+	width: 70px;
+}
+
+.new-doc-dlg .field.radio label:last-child {
+	margin-right: 0px;
+}
+
+.new-doc-dlg .field.radio label img {
+	border: 1px solid #777;
+	border-radius: 5px;
+	vertical-align: middle;
+	width: 90px;
+}
+
+.new-doc-dlg .field.radio .items {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.new-doc-dlg .field.radio .items div {
+	display: inline-block;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+.new-doc-dlg .field.radio .items div:first-child {
+	margin-left: 0px;
+}
+
+.new-doc-dlg .field {
+	margin-bottom: 4px;
+}
+
+.new-doc-dlg .field input,
+.new-doc-dlg .field select {
+	border: 1px solid #777;
+	font-size: 12px;
+}
+
+.new-doc-dlg .field.text input {
+	margin-left: 22px;
+	width: 222px;
+}
+
+.new-doc-dlg .field.text select {
+	margin-left: 22px;
+	width: 226px;
+}

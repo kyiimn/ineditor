@@ -1,0 +1,105 @@
+.ia-domtree-title {
+	margin-bottom: 4px;
+}
+
+.ia-domtree-tree {
+	display: inline-block;
+	width: 100%;
+}
+
+.ia-domtree-tree ul {
+	clear: both;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ia-domtree-tree li {
+	clear: both;
+}
+
+.ia-domtree-tree li > .node-body > .tab span {
+	background-color: transparent;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+.ia-domtree-tree li.no-leaf > .node-body > .tab span:last-child {
+	background-image: url(../../../images/property/domtree/plus.png);
+}
+
+.ia-domtree-tree li.no-leaf.opened > .node-body > .tab span:last-child {
+	background-image: url(../../../images/property/domtree/minus.png);
+}
+
+.ia-domtree-tree li.no-leaf > ul {
+	display: none;
+}
+
+.ia-domtree-tree li.no-leaf.opened > ul {
+	display: block;
+}
+
+.ia-domtree-tree li.selected > .node-body > label {
+	background-color: #00f;
+	border: 1px dotted #eee;
+}
+
+.ia-domtree-tree label {
+	border: 1px solid transparent;
+	display: inline-block;
+	font-size: 12px;
+	float: left;
+	margin-left: 2px;
+	padding: 0 4px;
+	height: 16px;
+}
+
+.ia-domtree-tree .node-body {
+	height: 18px;
+	margin: 4px 0;
+}
+
+.ia-domtree-tree .tab {
+	display: inline-block;
+	float: left;
+	height: 100%;
+}
+
+.ia-domtree-tree .icon {
+	display: inline-block;
+	float: left;
+	width: 16px;
+	height: 16px;
+}
+
+.ia-domtree-tree .icon.body {
+	background-image: url(../../../images/property/domtree/obj-body.png);
+	background-repeat: no-repeat;
+}
+
+.ia-domtree-tree .icon.box {
+	background-image: url(../../../images/property/domtree/obj-box.png);
+	background-repeat: no-repeat;
+}
+
+.ia-domtree-tree .icon.image {
+	background-image: url(../../../images/property/domtree/obj-image.png);
+	background-repeat: no-repeat;
+}
+
+.ia-domtree-tree .icon.text {
+	background-image: url(../../../images/property/domtree/obj-text.png);
+	background-repeat: no-repeat;
+}
+
+.ia-domtree-tree .icon.audio {
+	background-image: url(../../../images/property/domtree/obj-audio.png);
+	background-repeat: no-repeat;
+}
+
+.ia-domtree-tree .icon.video {
+	background-image: url(../../../images/property/domtree/obj-video.png);
+	background-repeat: no-repeat;
+}

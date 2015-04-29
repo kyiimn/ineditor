@@ -1,0 +1,17 @@
+.mobile-upload-dlg {
+	overflow: hidden;
+	position: relative;
+}
+
+.mobile-upload-dlg input {
+	position: absolute;
+	top: -100px;
+}
+
+.dlg-body .dlg-content.mobile-upload-dlg .button {
+	display: block;
+	font-size: 16px;
+	margin-bottom: 6px;
+	height: 50px;
+	width: 100%;
+}

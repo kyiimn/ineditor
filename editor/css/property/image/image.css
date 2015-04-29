@@ -1,0 +1,181 @@
+.ia-image-title {
+	margin-bottom: 4px;
+}
+
+.ia-image-tool {
+	height: 29px;
+	list-style: outside none none;
+	margin: 0 0 4px;
+	overflow: hidden;
+	padding: 0;
+}
+
+.ia-image-tool li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.ia-image-tool .button {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	margin: 2px;
+	width: 24px;
+	height: 24px;
+}
+
+.ia-image-tool .button:hover {
+	background-color: #292929;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-image-tool .button.selected {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-image-tool .separator {
+	border-left: 1px solid #454545;
+	border-right: 1px solid #141414;
+	display: inline-block;
+	margin: 2px;
+	width: 0px;
+	height: 24px;
+}
+
+.button#btn-ia-image-tool-add {
+	background-image: url('../../../images/property/image/tool-add.png');
+}
+
+.button#btn-ia-image-tool-modify {
+	background-image: url('../../../images/property/image/tool-modify.png');
+}
+
+.button#btn-ia-image-tool-delete {
+	background-image: url('../../../images/property/image/tool-delete.png');
+}
+
+.ia-image-preview {
+	background-color: #101010;
+	border: 1px solid #777;
+	display: inline-block;
+	height: 250px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.ia-image-preview img {
+	border: 0px;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.ia-image-list {
+	border: 0;
+	border-spacing: 0;
+	-border: 1px solid #777;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: auto;
+	table-layout: fixed;
+}
+
+.ia-image-list tr {
+	border-spacing: 0;
+}
+
+.ia-image-list tr td:nth-child(1), .ia-image-list tr th:nth-child(1) {
+	border-left: 1px solid #777;
+}
+
+.ia-image-list tr td, .ia-image-list tr th {
+	background-color: transparent;
+	border-spacing: 0;
+	border-right: 1px solid #777;
+	cursor: default;
+	-display: inline-block;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ia-image-list tr th {
+	background-color: #555;
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 2px 4px;
+}
+
+.ia-image-list tr td {
+	border-bottom: 1px solid #777;
+	font-size: 11px;
+	padding: 4px;
+}
+
+.ia-image-list tr.empty-highlight td {
+	background-color: #222;
+	border-color: #222;
+}
+
+.ia-image-list tr th:nth-child(1) {
+	text-align: center;
+}
+
+.ia-image-list tr th:nth-child(2),
+.ia-image-list tr td:nth-child(2) {
+	text-align: center;
+	width: 50px;
+}
+
+.ia-image-list tr th:nth-child(3),
+.ia-image-list tr td:nth-child(3) {
+	text-align: center;
+	width: 70px;
+}
+
+.ia-image-list .ia-image-item:hover {
+	background-color: #2a2a2a;
+}
+
+.ia-image-list .ia-image-item.selected {
+	background-color: #141414;
+}
+
+.ia-image-dlg label {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 4px;
+	text-align: right;
+	width: 70px;
+}
+
+.ia-image-dlg .field {
+	margin-bottom: 4px;
+}
+
+.ia-image-dlg .field.hidden {
+	display: none;
+}
+
+.ia-image-dlg .field input,
+.ia-image-dlg .field select {
+	border: 1px solid #777;
+	font-size: 12px;
+}
+
+.ia-image-dlg .field input {
+	width: 150px;
+}
+
+.ia-image-dlg .field select {
+	width: 154px;
+}

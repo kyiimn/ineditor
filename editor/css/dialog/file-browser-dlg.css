@@ -1,0 +1,127 @@
+.file-browser-dlg label {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 4px;
+	text-align: right;
+	width: 70px;
+}
+
+.file-browser-dlg .field {
+	margin-bottom: 4px;
+}
+
+.file-browser-dlg .field input {
+	border: 1px solid #777;
+	font-size: 12px;
+	width: 352px;
+}
+
+.file-browser-dlg .file-browser-header,
+.file-browser-dlg .file-browser-list {
+	border: 0;
+	border-spacing: 0;
+	-border: 1px solid #777;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: auto;
+	table-layout: fixed;
+}
+
+.file-browser-dlg .file-browser-header tr,
+.file-browser-dlg .file-browser-list tr {
+	border-spacing: 0;
+}
+
+.file-browser-dlg .file-browser-header tr th:nth-child(1) {
+	border-left: 1px solid #777;
+}
+
+.file-browser-dlg .file-browser-header tr th,
+.file-browser-dlg .file-browser-list tr td {
+	background-color: transparent;
+	border-spacing: 0;
+	border-right: 1px solid #777;
+	cursor: default;
+	-display: inline-block;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.file-browser-dlg .file-browser-header tr th {
+	background-color: #555;
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 2px;
+}
+
+.file-browser-dlg .file-browser-list tr td {
+	border-bottom: 1px solid #777;
+	font-size: 11px;
+	padding: 2px;
+}
+
+.file-browser-dlg .file-browser-header tr th:nth-child(1) {
+	width: 225px;
+}
+.file-browser-dlg .file-browser-list tr td:nth-child(1) {
+	padding-left: 6px;
+	width: 221px;
+}
+
+.file-browser-dlg .file-browser-header tr th:nth-child(2),
+.file-browser-dlg .file-browser-list tr td:nth-child(2) {
+	text-align: center;
+	width: 100px;
+}
+
+.file-browser-dlg .file-browser-header tr th:nth-child(3),
+.file-browser-dlg .file-browser-list tr td:nth-child(3) {
+	text-align: center;
+	width: 89px;
+}
+
+.file-browser-dlg .file-browser-list tr td:nth-child(3) {
+	border-right: 0;
+}
+
+.file-browser-dlg tbody tr:hover {
+	background-color: #292929;
+}
+
+.file-browser-dlg tbody tr.selected {
+	background-color: #141414;
+}
+
+.file-browser-dlg .file-browser-list-scroll {
+	border-left: 1px solid #777;
+	border-bottom: 1px solid #777;
+	height: 240px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.file-browser-dlg .side {
+	float: left;
+}
+
+.file-browser-dlg .right-side {
+	margin-left: 5px;
+}
+
+.file-browser-dlg .file-browser-preview {
+	border: 1px solid #777;
+	display: inline-block;
+	width: 200px;
+	height: 284px;
+	text-align: center;
+}
+
+.file-browser-dlg .file-browser-preview img {
+	border: none;
+	max-width: 100%;
+	max-height: 100%;
+}

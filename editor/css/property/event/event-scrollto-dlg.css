@@ -1,0 +1,16 @@
+.ia-event-scrollto .field input {
+	width: 87px;
+}
+
+.ia-event-scrollto .field input#ia-event-scrollto-fire-endevent {
+	width: 133px;
+}
+
+.ia-event-scrollto .field select {
+	width: 135px;
+}
+
+.ia-event-scrollto .field:nth-child(1) select {
+	margin-left: 4px;
+	width: 40px;
+}

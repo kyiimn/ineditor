@@ -1,0 +1,71 @@
+.context-mousearea {
+	background-color: transparent;
+	background-image: url(../images/editor/transparent.png);
+	background-repeat: repeat;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 16777270;
+}
+
+.context-wrap {
+	background-color: transparent;
+	border: 1px solid #777;
+	border-radius: 5px;
+	box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.75);
+	display: inline;
+	overflow: hidden;
+	position: absolute;
+	z-index: 16777271;
+}
+
+.context-wrap ul {
+	background-color: #3b3b3b;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	min-width: 160px;
+}
+
+.context-wrap li {
+	background-color: transparent;
+	float: none;
+}
+
+.context-wrap li:hover {
+	background-color: #ccc;
+}
+
+.context-wrap span {
+	background-color: transparent;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	width: 22px;
+	height: 22px;
+}
+
+.context-wrap a {
+	background-color: transparent;
+	color: #eee;
+	-display: block;
+	display: inline-block;
+	font-family: Gulim, "맑은 고딕", "Segoe UI";
+	font-size: 9pt;
+	padding: 5px 10px 5px 0px;
+	text-decoration: none;
+}
+
+.context-wrap li:hover a {
+	color: #444;
+}
+
+.context-wrap hr {
+	border-color: #eee;
+	border-style: solid none none;
+	border-width: 1px medium medium;
+	display: block;
+	margin: 4px 0px;
+}

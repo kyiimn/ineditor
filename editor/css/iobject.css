@@ -1,0 +1,203 @@
+.editor .object .resizer {
+	border-left: 1px solid #f00;
+	border-right: 1px solid #f00;
+	border-top: 1px solid #f00;
+	border-bottom: 1px solid #f00;
+	background-color: #a00;
+	background-repeat: repeat;
+	display: none;
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	z-index: 9999;
+}
+
+.editor .object.zero-angle .resizer {
+	display: inline-block;
+}
+
+.editor .object .resizer.hide {
+	display: none;
+}
+
+.editor .object .resizer.top {
+	border-top: none;
+	cursor: n-resize;
+	top: 0px;
+	left: calc(50% - 4px);
+}
+
+.editor .object .resizer.topleft {
+	border-top: none;
+	border-left: none;
+	cursor: nw-resize;
+	left: 0px;
+	top: 0px;
+}
+
+.editor .object .resizer.left {
+	border-left: none;
+	cursor: w-resize;
+	left: 0px;
+	top: calc(50% - 4px);
+}
+
+.editor .object .resizer.bottomleft {
+	border-bottom: none;
+	border-left: none;
+	cursor: sw-resize;
+	bottom: 0px;
+	left: 0px;
+}
+
+.editor .object .resizer.bottom {
+	border-bottom: none;
+	cursor: s-resize;
+	bottom: 0px;
+	left: calc(50% - 4px);
+}
+
+.editor .object .resizer.bottomright {
+	border-bottom: none;
+	border-right: none;
+	cursor: se-resize;
+	bottom: 0px;
+	right: 0px;
+}
+
+.editor .object .resizer.right {
+	border-right: none;
+	cursor: e-resize;
+	right: 0px;
+	top: calc(50% - 4px);
+}
+
+.editor .object .resizer.topright {
+	border-top: none;
+	border-right: none;
+	cursor: ne-resize;
+	top: 0px;
+	right: 0px;
+}
+
+.x-touch .editor .object .resizer {
+	width: 30px;
+	height: 30px;
+}
+
+.x-touch .editor .object .resizer.top {
+	left: calc(50% - 16px);
+}
+
+.x-touch .editor .object .resizer.left {
+	top: calc(50% - 16px);
+}
+
+.x-touch .editor .object .resizer.bottom {
+	left: calc(50% - 16px);
+}
+
+.x-touch .editor .object .resizer.right {
+	top: calc(50% - 16px);
+}
+
+.editor .object .rotater {
+	background-color: #a00;
+	background-repeat: repeat;
+	border: 1px solid #f00;
+	border-radius: 45px;
+	cursor: ns-resize;
+	display: inline-block;
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	z-index: 9999;
+	top: calc(50% - 4px);
+	left: calc(50% - 4px);
+}
+
+.x-touch .editor .object .rotater {
+	width: 31px;
+	height: 31px;
+	z-index: 9999;
+	top: calc(50% - 16px);
+	left: calc(50% - 16px);
+}
+
+.editor .object .data .drop-area.dragover {
+	background-color: #888;
+}
+
+.editor .object.text .data {
+	background-color: transparent;
+	border: 0;
+	color: inherit;
+	display: inline-block;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.editor .object.image .data,
+.editor .object.audio .data,
+.editor .object.video .data {
+	background-color: transparent;
+	border: 0;
+	color: inherit;
+	display: inline-block;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+.editor .object.image .data .drop-area,
+.editor .object.audio .data .drop-area,
+.editor .object.video .data div {
+	border: 0;
+	display: inline-block;
+	opacity: .7;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.editor .object.image .data .drop-area > *,
+.editor .object.audio .data .drop-area > *,
+.editor .object.video .data .drop-area > * {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.editor .object.image .data .drop-area *,
+.editor .object.audio .data .drop-area *,
+.editor .object.video .data .drop-area * {
+	background-color: transparent;
+}
+
+.editor .object.audio .data .drop-area .small {
+	font-size: 10px;
+}
+
+.editor .object.audio .data .obj-icon {
+	background-image: url(../images/editor/audio.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 120px;
+	width: 120px;
+	height: 99px;
+}
+
+.editor .object.video .data img {
+	background-color: transparent;
+}

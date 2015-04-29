@@ -1,0 +1,16 @@
+var G_FONT_LIST = [
+	{ id: 'NanumGothic', name: '나눔고딕' },
+	{ id: 'NanumMyeongjo', name: '나눔명조' },
+	{ id: 'MalgunGothic', name: '굴림' },
+	{ id: 'Gulim', name: '굴림' },
+	{ id: 'Dotum', name: '돋움' },
+	{ id: 'Batang', name: '바탕' },
+	{ id: 'Gungsuh', name: '궁서' },
+	{ id: 'Arial', name: 'Arial' },
+	{ id: 'Consolas', name: 'Consolas' },
+	{ id: 'Courier', name: 'Courier' },
+	{ id: 'Fixedsys', name: 'Fixedsys' },
+	{ id: 'Segoe UI', name: 'Segoe UI' },
+	{ id: 'Tahoma', name: 'Tahoma' },
+	{ id: 'Times New Roman', name: 'Times New Roman' },
+];

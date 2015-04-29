@@ -1,0 +1,20 @@
+.ia-event-play .field select {
+	width: 274px;
+}
+
+.ia-event-play .field input {
+	width: 228px;
+}
+
+.ia-event-play button#ia-event-play-targetobj-select {
+	margin-left: 5px;
+	width: 40px;
+}
+
+.ia-event-play button:hover {
+	background-color: #555;
+}
+
+.ia-event-play button:active {
+	background-color: #777;
+}

@@ -1,0 +1,153 @@
+.ia-animation-title {
+	margin-bottom: 4px;
+}
+
+.ia-animation-tool {
+	height: 29px;
+	list-style: outside none none;
+	margin: 0 0 4px;
+	overflow: hidden;
+	padding: 0;
+}
+
+.ia-animation-tool li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.ia-animation-tool .button {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	margin: 2px;
+	width: 24px;
+	height: 24px;
+}
+
+.ia-animation-tool .button:hover {
+	background-color: #292929;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-animation-tool .button.selected {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-animation-tool .separator {
+	border-left: 1px solid #454545;
+	border-right: 1px solid #141414;
+	display: inline-block;
+	margin: 2px;
+	width: 0px;
+	height: 24px;
+}
+
+.button#btn-ia-animation-tool-add {
+	background-image: url('../../../images/property/animation/tool-add.png');
+}
+
+.button#btn-ia-animation-tool-modify {
+	background-image: url('../../../images/property/animation/tool-modify.png');
+}
+
+.button#btn-ia-animation-tool-preview {
+	background-image: url('../../../images/property/animation/tool-preview.png');
+}
+
+.button#btn-ia-animation-tool-delete {
+	background-image: url('../../../images/property/animation/tool-delete.png');
+}
+
+.ia-animation-list {
+	border: 0;
+	border-spacing: 0;
+	-border: 1px solid #777;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: auto;
+	table-layout: fixed;
+}
+
+.ia-animation-list tr {
+	border-spacing: 0;
+}
+
+.ia-animation-list tr td:nth-child(1), .ia-animation-list tr th:nth-child(1) {
+	border-left: 1px solid #777;
+}
+
+.ia-animation-list tr td, .ia-animation-list tr th {
+	background-color: transparent;
+	border-spacing: 0;
+	border-right: 1px solid #777;
+	cursor: default;
+	-display: inline-block;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ia-animation-list tr th {
+	background-color: #555;
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 2px 4px;
+}
+
+.ia-animation-list tr td {
+	border-bottom: 1px solid #777;
+	font-size: 11px;
+	padding: 4px;
+}
+
+.ia-animation-list tr th:nth-child(1) {
+	text-align: center;
+}
+
+.ia-animation-list .ia-animation-item:hover {
+	background-color: #2a2a2a;
+}
+
+.ia-animation-list .ia-animation-item.selected {
+	background-color: #141414;
+}
+
+.ia-animation-dlg label {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 4px;
+	text-align: right;
+	width: 70px;
+}
+
+.ia-animation-dlg .field {
+	margin-bottom: 4px;
+}
+
+.ia-animation-dlg .field.hidden {
+	display: none;
+}
+
+.ia-animation-dlg .field input,
+.ia-animation-dlg .field select {
+	border: 1px solid #777;
+	font-size: 12px;
+}
+
+.ia-animation-dlg .field input {
+	width: 150px;
+}
+
+.ia-animation-dlg .field select {
+	width: 154px;
+}

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="user-scalable=no,width=1280">
+
+<title>IN Editor</title>
+
+<!-- include jquery/jqueryui -->
+<link rel="stylesheet" type="text/css" href="lib/js/jquery/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="lib/js/jquery/jquery.colpick.css">
+<link rel="stylesheet" type="text/css" href="lib/js/jquery/jquery.loader.css">
+<script type="text/javascript" src="lib/js/jquery/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="lib/js/jquery/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="lib/js/jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="lib/js/jquery/jquery.colpick.js"></script>
+<script type="text/javascript" src="lib/js/jquery/jquery.json.js"></script>
+<script type="text/javascript" src="lib/js/jquery/jquery.keyframes.js"></script>
+<script type="text/javascript" src="lib/js/jquery/jquery.loader.js"></script>
+<script type="text/javascript" src="lib/js/jquery/prefixfree.js"></script>
+<script type="text/javascript" src="lib/js/jquery/html2canvas.js"></script>
+
+<!-- include misc -->
+<script type="text/javascript" src="lib/js/define.js"></script>
+<script type="text/javascript" src="lib/js/define-doc-ratio.js"></script>
+<script type="text/javascript" src="lib/js/define-event.js"></script>
+<script type="text/javascript" src="lib/js/define-font.js"></script>
+<script type="text/javascript" src="lib/js/message.ko.js"></script>
+<script type="text/javascript" src="lib/js/message-err.ko.js"></script>
+<script type="text/javascript" src="lib/js/misc.js"></script>
+<script type="text/javascript" src="lib/js/path.js"></script>
+<script type="text/javascript" src="lib/js/version.js"></script>
+
+<!-- include plugin -->
+<link rel="stylesheet" type="text/css" href="css/contextmenu.css">
+<link rel="stylesheet" type="text/css" href="css/ieditor.css">
+<link rel="stylesheet" type="text/css" href="css/iobject.css">
+
+<!-- include editor js -->
+<link rel="stylesheet" type="text/css" href="css/confirmbox.css">
+<link rel="stylesheet" type="text/css" href="css/control.css">
+<link rel="stylesheet" type="text/css" href="css/editor.css">
+<link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="stylesheet" type="text/css" href="css/icon.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/messagebox.css">
+<link rel="stylesheet" type="text/css" href="css/spliter.css">
+
+<script type="text/javascript" src="lib/js/audio.js"></script>
+<script type="text/javascript" src="lib/js/box.js"></script>
+<script type="text/javascript" src="lib/js/confirmbox.js"></script>
+<script type="text/javascript" src="lib/js/control.js"></script>
+<script type="text/javascript" src="lib/js/control-layout.js"></script>
+<script type="text/javascript" src="lib/js/control-style.js"></script>
+<script type="text/javascript" src="lib/js/doc.js"></script>
+<script type="text/javascript" src="lib/js/editor.js"></script>
+<script type="text/javascript" src="lib/js/func.js"></script>
+<script type="text/javascript" src="lib/js/image.js"></script>
+<script type="text/javascript" src="lib/js/messagebox.js"></script>
+<script type="text/javascript" src="lib/js/server.js"></script>
+<script type="text/javascript" src="lib/js/spliter.js"></script>
+<script type="text/javascript" src="lib/js/tool.js"></script>
+<script type="text/javascript" src="lib/js/touch.js"></script>
+<script type="text/javascript" src="lib/js/upload.js"></script>
+<script type="text/javascript" src="lib/js/waitbar.js"></script>
+
+<script type="text/javascript" src="lib/js/editor/plugin-contextmenu.js"></script>
+<script type="text/javascript" src="lib/js/editor/plugin-ieditor.js"></script>
+<script type="text/javascript" src="lib/js/editor/plugin-iobject.js"></script>
+
+<script type="text/javascript" src="lib/js/main.js"></script>
+
+<!-- include dialog js -->
+<link rel="stylesheet" type="text/css" href="css/dialog.css">
+<link rel="stylesheet" type="text/css" href="css/dialog/file-browser-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/dialog/mobile-upload-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/dialog/new-doc-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/dialog/open-doc-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/dialog/save-doc-dlg.css">
+
+<script type="text/javascript" src="lib/js/dialog.js"></script>
+<script type="text/javascript" src="lib/js/dialog/file-browser-dlg.js"></script>
+<script type="text/javascript" src="lib/js/dialog/mobile-upload-dlg.js"></script>
+<script type="text/javascript" src="lib/js/dialog/new-doc-dlg.js"></script>
+<script type="text/javascript" src="lib/js/dialog/open-doc-dlg.js"></script>
+<script type="text/javascript" src="lib/js/dialog/save-doc-dlg.js"></script>
+
+<!-- include property plugin js -->
+<link rel="stylesheet" type="text/css" href="css/property.css">
+<link rel="stylesheet" type="text/css" href="css/property/domtree/domtree.css">
+<link rel="stylesheet" type="text/css" href="css/property/document/document.css">
+<link rel="stylesheet" type="text/css" href="css/property/event/event.css">
+<link rel="stylesheet" type="text/css" href="css/property/event/event-preview-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/event/event-type-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/event/event-style-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/event/event-link-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/event/event-fireevent-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/event/event-scrollto-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/event/event-play-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/event/event-script-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/animation/animation.css">
+<link rel="stylesheet" type="text/css" href="css/property/animation/animation-editor-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/animation/animation-preview-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/animation/animation-style-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/transition/transition.css">
+<link rel="stylesheet" type="text/css" href="css/property/transition/transition-add-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/transition/transition-preview-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/image/image.css">
+<link rel="stylesheet" type="text/css" href="css/property/image/image-property-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/audio/audio.css">
+<link rel="stylesheet" type="text/css" href="css/property/audio/audio-property-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/video/video.css">
+<link rel="stylesheet" type="text/css" href="css/property/video/video-input-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/script/script.css">
+<link rel="stylesheet" type="text/css" href="css/property/script/script-editor-dlg.css">
+<link rel="stylesheet" type="text/css" href="css/property/script/script-link-dlg.css">
+
+<script type="text/javascript" src="lib/js/property.js"></script>
+<script type="text/javascript" src="lib/js/property/domtree/domtree.js"></script>
+<script type="text/javascript" src="lib/js/property/document/document.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-preview-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-type-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-style-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-style-add-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-style-detect-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-link-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-fireevent-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-scrollto-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-scrollto-detect-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-play-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-script-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/event/event-select-target-obj-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/animation/animation.js"></script>
+<script type="text/javascript" src="lib/js/property/animation/animation-editor-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/animation/animation-preview-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/animation/animation-style-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/animation/animation-style-add-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/animation/animation-style-detect-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/animation/animation-select-target-obj-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/transition/transition.js"></script>
+<script type="text/javascript" src="lib/js/property/transition/transition-add-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/transition/transition-preview-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/image/image.js"></script>
+<script type="text/javascript" src="lib/js/property/image/image-property-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/audio/audio.js"></script>
+<script type="text/javascript" src="lib/js/property/audio/audio-property-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/video/video.js"></script>
+<script type="text/javascript" src="lib/js/property/video/video-input-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/video/video-youtube.js"></script>
+<script type="text/javascript" src="lib/js/property/video/video-vimeo.js"></script>
+<script type="text/javascript" src="lib/js/property/script/script.js"></script>
+<script type="text/javascript" src="lib/js/property/script/script-editor-dlg.js"></script>
+<script type="text/javascript" src="lib/js/property/script/script-link-dlg.js"></script>
+</head>
+
+<body>
+<header>
+	<div class="logo">
+		<span class="logo-I">I</span><span class="logo-N">N</span>
+		<span class="logo-desc"><b>D</b>igital <b>S</b>torytelling <b>e</b>ditor</span>
+	</div>
+	<ul class="tool hidden">
+		<li><a class="button selected" data-action="tool-select"></a></li>
+		<li><a class="button" data-action="tool-box"></a></li>
+		<li><a class="button" data-action="tool-text"></a></li>
+		<li><a class="button" data-action="tool-image"></a></li>
+		<li><a class="button" data-action="tool-audio"></a></li>
+		<li><a class="button" data-action="tool-video"></a></li>
+		<li><a class="touch button" data-action="tool-delete"></a></li>
+	</ul>
+	<div class="function">
+		<div class="doc-status">
+			<span class="doc-mode"></span>
+			<span class="doc-info"></span>
+		</div>
+		<ul>
+			<li><a class="button" data-action="func-new"></a></li>
+			<li><a class="separator"></a></li>
+			<li><a class="button" data-action="func-open"></a></li>
+			<li><a class="button" data-action="func-save"></a></li>
+			<li><a class="separator"></a></li>
+			<li><a class="button" data-action="func-save-as"></a></li>
+			<li><a class="separator"></a></li>
+			<li><a class="button" data-action="func-preview"></a></li>
+			<li><a class="separator"></a></li>
+			<li><a class="button" data-action="func-delete"></a></li>
+			<li><a class="separator"></a></li>
+			<li><a class="button" data-action="func-publish"></a></li>
+		</ul>
+	</div>
+</header>
+<section>
+	<div class="layout control-box" data-collapsible="true">
+		<ul class="el-tool">
+			<li><a class="button selected" data-action="tool-select"></a></li>
+			<li><a class="button" data-action="tool-box"></a></li>
+			<li><a class="button" data-action="tool-text"></a></li>
+			<li><a class="button" data-action="tool-image"></a></li>
+			<li><a class="button" data-action="tool-audio"></a></li>
+			<li><a class="button" data-action="tool-video"></a></li>
+			<li><a class="touch button" data-action="tool-delete"></a></li>
+		</ul>
+		<div class="el-control">
+			<div class="el-attr">
+				<div class="el-attr-box" id="el-attr-common">
+					<div class="el-attr-body">
+						<div class="field">
+							<label>ID: </label>
+							<label class="sub">&nbsp;</label>
+							<input class="big el-attr-common-datafield" type="text" id="el-attr-common-id">
+						</div>
+						<div class="field">
+							<label>Type: </label>
+							<label class="sub">&nbsp;</label>
+							<input class="big el-attr-common-datafield" type="text" id="el-attr-common-type" readonly>
+						</div>
+					</div>
+				</div>
+				<div class="el-attr-box" id="el-attr-layout">
+					<a class="collapser">layout<span class="status"></span></a>
+					<div class="el-attr-body">
+						<div class="field">
+							<label>Offset: </label>
+							<label class="sub" title="Offset-Left">L</label>
+							<input class="small el-attr-layout-datafield number" data-style="left" type="text" id="el-attr-layout-left">
+							<select class="unit el-attr-layout-datafield" data-style="left" id="el-attr-layout-left-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Offset-Top">T</label>
+							<input class="small el-attr-layout-datafield number" data-style="top" type="text" id="el-attr-layout-top">
+							<select class="unit el-attr-layout-datafield" data-style="top" id="el-attr-layout-top-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field continue">
+							<label>&nbsp;</label>
+							<label class="sub" title="Offset-Right">R</label>
+							<input class="small el-attr-layout-datafield number" data-style="right" type="text" id="el-attr-layout-right">
+							<select class="unit el-attr-layout-datafield" data-style="right" id="el-attr-layout-right-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Offset-Bottom">B</label>
+							<input class="small el-attr-layout-datafield number" data-style="bottom" type="text" id="el-attr-layout-bottom">
+							<select class="unit el-attr-layout-datafield" data-style="bottom" id="el-attr-layout-bottom-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Size: </label>
+							<label class="sub" title="Width">W</label>
+							<input class="small el-attr-layout-datafield number" data-style="width" type="text" id="el-attr-layout-size-x">
+							<select class="unit el-attr-layout-datafield" data-style="width" id="el-attr-layout-size-x-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Height">H</label>
+							<input class="small el-attr-layout-datafield number" data-style="height" type="text" id="el-attr-layout-size-y">
+							<select class="unit el-attr-layout-datafield" data-style="height" id="el-attr-layout-size-y-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Min-Size: </label>
+							<label class="sub" title="Min-Width">W</label>
+							<input class="small el-attr-layout-datafield number" data-style="min-width" type="text" id="el-attr-layout-min-size-x">
+							<select class="unit el-attr-layout-datafield" data-style="min-width" id="el-attr-layout-min-size-x-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Min-Height">H</label>
+							<input class="small el-attr-layout-datafield number" data-style="min-height" type="text" id="el-attr-layout-min-size-y">
+							<select class="unit el-attr-layout-datafield" data-style="min-height" id="el-attr-layout-min-size-y-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Max-Size: </label>
+							<label class="sub" title="Max-Width">W</label>
+							<input class="small el-attr-layout-datafield number" data-style="max-width" type="text" id="el-attr-layout-max-size-x">
+							<select class="unit el-attr-layout-datafield" data-style="max-width" id="el-attr-layout-max-size-x-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Max-Height">H</label>
+							<input class="small el-attr-layout-datafield number" data-style="max-height" type="text" id="el-attr-layout-max-size-y">
+							<select class="unit el-attr-layout-datafield" data-style="max-height" id="el-attr-layout-max-size-y-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Margin: </label>
+							<label class="sub" title="Margin-Top">T</label>
+							<input class="small el-attr-layout-datafield number" data-style="margin-top" type="text" id="el-attr-layout-margin-top">
+							<select class="unit el-attr-layout-datafield" data-style="margin-top" id="el-attr-layout-margin-top-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Margin-Right">R</label>
+							<input class="small el-attr-layout-datafield number" data-style="margin-right" type="text" id="el-attr-layout-margin-right">
+							<select class="unit el-attr-layout-datafield" data-style="margin-right" id="el-attr-layout-margin-right-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field continue">
+							<label>&nbsp;</label>
+							<label class="sub" title="Margin-Bottom">B</label>
+							<input class="small el-attr-layout-datafield number" data-style="margin-bottom" type="text" id="el-attr-layout-margin-bottom">
+							<select class="unit el-attr-layout-datafield" data-style="margin-bottom" id="el-attr-layout-margin-bottom-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Margin-Left">L</label>
+							<input class="small el-attr-layout-datafield number" data-style="margin-left" type="text" id="el-attr-layout-margin-left">
+							<select class="unit el-attr-layout-datafield" data-style="margin-left" id="el-attr-layout-margin-left-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Padding: </label>
+							<label class="sub" title="Padding-Top">T</label>
+							<input class="small el-attr-layout-datafield number" data-style="padding-top" type="text" id="el-attr-layout-padding-top">
+							<select class="unit el-attr-layout-datafield" data-style="padding-top" id="el-attr-layout-padding-top-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Padding-Right">R</label>
+							<input class="small el-attr-layout-datafield number" data-style="padding-right" type="text" id="el-attr-layout-padding-right">
+							<select class="unit el-attr-layout-datafield" data-style="padding-right" id="el-attr-layout-padding-right-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field continue">
+							<label>&nbsp;</label>
+							<label class="sub" title="Padding-Bottom">B</label>
+							<input class="small el-attr-layout-datafield number" data-style="padding-bottom" type="text" id="el-attr-layout-padding-bottom">
+							<select class="unit el-attr-layout-datafield" data-style="padding-bottom" id="el-attr-layout-padding-bottom-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Padding-Left">L</label>
+							<input class="small el-attr-layout-datafield number" data-style="padding-left" type="text" id="el-attr-layout-padding-left">
+							<select class="unit el-attr-layout-datafield" data-style="padding-left" id="el-attr-layout-padding-left-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Overflow: </label>
+							<label class="sub" title="Overflow-X">X</label>
+							<select class="middle el-attr-layout-datafield" data-style="overflow-x" id="el-attr-layout-overflow-x">
+								<option value="auto">auto</option>
+								<option value="hidden">hidden</option>
+								<option value="scroll">scroll</option>
+							</select>
+							<label class="sub" title="Overflow-Y">Y</label>
+							<select class="middle el-attr-layout-datafield" data-style="overflow-y" id="el-attr-layout-overflow-y">
+								<option value="auto">auto</option>
+								<option value="hidden">hidden</option>
+								<option value="scroll">scroll</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Visibility: </label>
+							<label class="sub">&nbsp;</label>
+							<select class="middle el-attr-layout-datafield" data-style="visibility" id="el-attr-layout-visibility">
+								<option value="visible">visible</option>
+								<option value="hidden">hidden</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Position: </label>
+							<label class="sub">&nbsp;</label>
+							<select class="middle el-attr-layout-datafield" data-style="position" id="el-attr-layout-position">
+								<option value="static">static</option>
+								<option value="fixed">fixed</option>
+								<option value="absolute">absolute</option>
+								<option value="relative">relative</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Display: </label>
+							<label class="sub">&nbsp;</label>
+							<select class="middle el-attr-layout-datafield" data-style="display" id="el-attr-layout-display">
+								<option value="inline-block">inline-block</option>
+								<option value="inline">inline</option>
+								<option value="block">block</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Float: </label>
+							<label class="sub">&nbsp;</label>
+							<select class="middle el-attr-layout-datafield" data-style="float" id="el-attr-layout-float">
+								<option value="none">none</option>
+								<option value="left">left</option>
+								<option value="right">right</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Clear: </label>
+							<label class="sub">&nbsp;</label>
+							<select class="middle el-attr-layout-datafield" data-style="clear" id="el-attr-layout-clear">
+								<option value="none">none</option>
+								<option value="both">both</option>
+								<option value="left">left</option>
+								<option value="right">right</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Z-Index: </label>
+							<label class="sub">&nbsp;</label>
+							<input class="middle el-attr-layout-datafield number" data-style="z-index" type="text" id="el-attr-layout-z-index">
+						</div>
+						<div class="field">
+							<label>Lock-Resize: </label>
+							<label class="sub">&nbsp;</label>
+							<select class="middle el-attr-layout-datafield" data-style="lock-resize" id="el-attr-layout-lock-resize">
+								<option value="unlock">Unlock</option>
+								<option value="lock">Lock</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Lock-Move: </label>
+							<label class="sub">&nbsp;</label>
+							<select class="middle el-attr-layout-datafield" data-style="lock-move" id="el-attr-layout-lock-move">
+								<option value="unlock">Unlock</option>
+								<option value="lock">Lock</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="el-attr-box collapse" id="el-attr-style">
+					<a class="collapser">style<span class="status"></span></a>
+					<div class="el-attr-body">
+						<div class="field optional box text">
+							<label>Background: </label>
+							<label class="sub" title="Background-Image">I</label>
+							<input class="with-button el-attr-style-datafield" data-style="background-image" type="text" id="el-attr-style-background-image" readonly>
+							<button id="el-attr-style-background-image-select">Browser</button>
+							<button id="el-attr-style-background-image-clear" class="small">X</button>
+						</div>
+						<div class="field optional box text continue">
+							<label>&nbsp;</label>
+							<label class="sub" title="Background-Repeat">IR</label>
+							<select class="middle el-attr-style-datafield" data-style="background-repeat" id="el-attr-style-background-repeat">
+								<option value="repeat">repeat-XY</option>
+								<option value="repeat-x">repeat-X</option>
+								<option value="repeat-y">repeat-Y</option>
+								<option value="no-repeat">No repeat</option>
+							</select>
+							<label class="sub" title="Background-Color">C</label>
+							<input class="middle el-attr-style-datafield" data-style="background-color" type="text" id="el-attr-style-background-color">
+						</div>
+						<div class="field optional box text continue">
+							<label>&nbsp;</label>
+							<label class="sub" title="Background-Size">S</label>
+							<input class="small el-attr-style-datafield number" data-style="background-size" type="text" id="el-attr-style-background-size">
+							<select class="unit el-attr-style-datafield" data-style="background-size" id="el-attr-style-background-size-unit">
+								<option value="px">px</option>
+								<option value="%">%</option>
+							</select>
+							<label class="sub" title="Background-Attachment">A</label>
+							<select class="middle el-attr-style-datafield" data-style="background-attachment" id="el-attr-style-background-attachment">
+								<option value="scroll">Scroll</option>
+								<option value="fixed">Fixed</option>
+								<option value="local">Local</option>
+							</select>
+						</div>
+
+						<div class="field">
+							<label>Animation: </label>
+							<label class="sub" title="Animation-Name">A</label>
+							<select class="big el-attr-style-datafield" data-style="animation-name" id="el-attr-style-animation-name"></select>
+						</div>
+						<div class="field continue">
+							<label>A-Duration</label>
+							<label class="sub" title="Animation-Duration">DU</label>
+							<input class="middle el-attr-style-datafield number" data-style="animation-duration" type="text" id="el-attr-style-animation-duration">
+							<label class="sub" title="Animation-Delay">DE</label>
+							<input class="middle el-attr-style-datafield number" data-style="animation-delay" type="text" id="el-attr-style-animation-delay">
+						</div>
+						<div class="field continue">
+							<label>A-Timing</label>
+							<label class="sub" title="Animation-Timing-Function">F</label>
+							<select class="middle el-attr-style-datafield" data-style="animation-timing-function" id="el-attr-style-animation-timing-function">
+								<option value="linear">linear</option>
+								<option value="ease">ease</option>
+								<option value="ease-in">ease-in</option>
+								<option value="ease-out">ease-out</option>
+								<option value="ease-in-out">ease-in-out</option>
+								<option value="initial">initial</option>
+							</select>
+							<label class="sub" title="Animation-Iteration-Count">C</label>
+							<input class="middle el-attr-style-datafield number" data-style="animation-iteration-count" type="text" id="el-attr-style-animation-iteration-count">
+						</div>
+						<div class="field continue">
+							<label>A-Play</label>
+							<label class="sub" title="Animation-Direction">D</label>
+							<select class="middle el-attr-style-datafield" data-style="animation-direction" id="el-attr-style-animation-direction">
+								<option value="normal">normal</option>
+								<option value="reverse">reverse</option>
+								<option value="alternate">alternate</option>
+								<option value="alternate-reverse">alternate-reverse</option>
+							</select>
+							<label class="sub" title="Animation-Play-State">S</label>
+							<select class="middle el-attr-style-datafield" data-style="animation-play-state" id="el-attr-style-animation-play-state">
+								<option value="running">running</option>
+								<option value="paused">paused</option>
+							</select>
+						</div>
+
+						<div class="field optional text">
+							<label>Font-Family: </label>
+							<label class="sub" title="Font-Family">F</label>
+							<select class="big el-attr-style-datafield" data-style="font-family" id="el-attr-style-font-family"></select>
+						</div>
+						<div class="field optional continue text">
+							<label>&nbsp;</label>
+							<label class="sub" title="Text-Align">A</label>
+							<select class="middle el-attr-style-datafield" data-style="font-align" id="el-attr-style-font-align">
+								<option value="justify">Justify</option>
+								<option value="left">Left</option>
+								<option value="right">Right</option>
+								<option value="center">Center</option>
+							</select>
+							<label class="sub" title="Font-Size">S</label>
+							<input class="small el-attr-style-datafield number" data-style="font-size" type="text" id="el-attr-style-font-size">
+							<select class="unit el-attr-style-datafield" data-style="font-size" id="el-attr-style-font-size-unit">
+								<option value="pt">pt</option>
+								<option value="px">px</option>
+								<option value="em">em</option>
+								<option value="%">%</option>
+							</select>
+						</div>
+						<div class="field optional continue text">
+							<label>F-Style</label>
+							<label class="sub" title="Font-Bold">B</label>
+							<select class="middle el-attr-style-datafield" data-style="font-weight" id="el-attr-style-font-bold">
+								<option value="normal">Normal</option>
+								<option value="bold">Bold</option>
+							</select>
+							<label class="sub" title="Font-Italic">I</label>
+							<select class="middle el-attr-style-datafield" data-style="font-style" id="el-attr-style-font-italic">
+								<option value="normal">Normal</option>
+								<option value="italic">Italic</option>
+							</select>
+						</div>
+						<div class="field optional continue text">
+							<label>F-Color:</label>
+							<label class="sub" title="Font-Color">C</label>
+							<input class="middle el-attr-style-datafield" data-style="color" type="text" id="el-attr-style-font-color">
+						</div>
+						<div class="field">
+							<label>Border: </label>
+							<label class="sub" title="Border-Top">T</label>
+							<input class="small el-attr-style-datafield number" data-style="border-top-width" type="text" id="el-attr-style-border-top">
+							<select class="unit el-attr-style-datafield" data-style="border-top-width" id="el-attr-style-border-top-unit" readonly>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Border-Right">R</label>
+							<input class="small el-attr-style-datafield number" data-style="border-right-width" type="text" id="el-attr-style-border-right">
+							<select class="unit el-attr-style-datafield" data-style="border-right-width" id="el-attr-style-border-right-unit" readonly>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field continue">
+							<label>&nbsp;</label>
+							<label class="sub" title="Border-Bottom">B</label>
+							<input class="small el-attr-style-datafield number" data-style="border-bottom-width" type="text" id="el-attr-style-border-bottom">
+							<select class="unit el-attr-style-datafield" data-style="border-bottom-width" id="el-attr-style-border-bottom-unit" readonly>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Border-Left">L</label>
+							<input class="small el-attr-style-datafield number" data-style="border-left-width" type="text" id="el-attr-style-border-left">
+							<select class="unit el-attr-style-datafield" data-style="border-left-width" id="el-attr-style-border-left-unit" readonly>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field continue">
+							<label>B-Radius: </label>
+							<label class="sub" title="Border-TopLeft-Radius">TL</label>
+							<input class="small el-attr-style-datafield number" data-style="border-top-left-radius" type="text" id="el-attr-style-border-radius-top-left">
+							<select class="unit el-attr-style-datafield" data-style="border-top-left-radius" id="el-attr-style-border-radius-top-left-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Border-TopRight-Radius">TR</label>
+							<input class="small el-attr-style-datafield number" data-style="border-top-right-radius" type="text" id="el-attr-style-border-radius-top-right">
+							<select class="unit el-attr-style-datafield" data-style="border-top-right-radius" id="el-attr-style-border-radius-top-right-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field continue">
+							<label>&nbsp;</label>
+							<label class="sub" title="Border-BottomLeft-Radius">BL</label>
+							<input class="small el-attr-style-datafield number" data-style="border-bottom-left-radius" type="text" id="el-attr-style-border-radius-bottom-left">
+							<select class="unit el-attr-style-datafield" data-style="border-bottom-left-radius" id="el-attr-style-border-radius-bottom-left-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Border-BottomRight-Radius">BR</label>
+							<input class="small el-attr-style-datafield number" data-style="border-bottom-right-radius" type="text" id="el-attr-style-border-radius-bottom-right">
+							<select class="unit el-attr-style-datafield" data-style="border-bottom-right-radius" id="el-attr-style-border-radius-bottom-right-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field continue">
+							<label>B-Color:</label>
+							<label class="sub" title="Border-Color">C</label>
+							<input class="middle el-attr-style-datafield" data-style="border-color" type="text" id="el-attr-style-border-color">
+						</div>
+						<div class="field continue">
+							<label>B-Style: </label>
+							<label class="sub" title="Border-Style">S</label>
+							<select class="middle el-attr-style-datafield" data-style="border-style" id="el-attr-style-border-style">
+								<option value="none">none</option>
+								<option value="solid">solid</option>
+								<option value="dotted">dotted</option>
+								<option value="dashed">dashed</option>
+								<option value="double">double</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Opacity: </label>
+							<label class="sub">&nbsp;</label>
+							<input class="middle el-attr-style-datafield number" data-style="opacity" type="text" id="el-attr-style-opacity">
+						</div>
+						<div class="field">
+							<label>Shadow: </label>
+							<label class="sub" title="Shadow-Vertical">W</label>
+							<input class="small el-attr-style-datafield number" data-style="box-shadow-vertical" type="text" id="el-attr-style-shadow-width">
+							<select class="unit el-attr-style-datafield" data-style="box-shadow-vertical" id="el-attr-style-shadow-width-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Shadow-Horizontal">H</label>
+							<input class="small el-attr-style-datafield number" data-style="box-shadow-horizontal" type="text" id="el-attr-style-shadow-height">
+							<select class="unit el-attr-style-datafield" data-style="box-shadow-horizontal" id="el-attr-style-shadow-height-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field continue">
+							<label>&nbsp;</label>
+							<label class="sub" title="Shadow-Blur">BD</label>
+							<input class="small el-attr-style-datafield number" data-style="box-shadow-blur" type="text" id="el-attr-style-shadow-bd">
+							<select class="unit el-attr-style-datafield" data-style="box-shadow-blur" id="el-attr-style-shadow-bd-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Scale: </label>
+							<label class="sub" title="Transform-Scale-X">X</label>
+							<input class="middle el-attr-style-datafield number" data-style="transform-scale-x" type="text" id="el-attr-style-transform-scale-x">
+							<label class="sub" title="Transform-Scale-Y>Y</label>
+							<input class="middle el-attr-style-datafield number" data-style="transform-scale-y" type="text" id="el-attr-style-transform-scale-y">
+						</div>
+						<div class="field">
+							<label>Rotate</label>
+							<label class="sub">&nbsp;</label>
+							<input class="small el-attr-style-datafield number" data-style="transform-rotate" type="text" id="el-attr-style-transform-rotate">
+							<select class="unit el-attr-style-datafield" data-style="transform-rotate" id="el-attr-style-transform-rotate-unit">
+								<option value="deg">deg</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Translate: </label>
+							<label class="sub" title="Transform-Translate-X">X</label>
+							<input class="small el-attr-style-datafield number" data-style="transform-translate-x" type="text" id="el-attr-style-transform-translate-x">
+							<select class="unit el-attr-style-datafield" data-style="transform-translate-x" id="el-attr-style-transform-translate-x-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+							<label class="sub" title="Transform-Translate-Y">Y</label>
+							<input class="small el-attr-style-datafield number" data-style="transform-translate-y" type="text" id="el-attr-style-transform-translate-y">
+							<select class="unit el-attr-style-datafield" data-style="transform-translate-y" id="el-attr-style-transform-translate-y-unit">
+								<option value="%">%</option>
+								<option value="px">px</option>
+							</select>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="x-spliter left"><a class="collapser"></a></div>
+	<div class="layout editor-box" data-min-width="400">
+		<!--div class="editor-ruler editor-ruler-x">
+			<div class="editor-ruler-x-blank"></div>
+			<div class="editor-ruler-arrow"></div>
+		</div>
+		<div class="editor-ruler editor-ruler-y">
+			<div class="editor-ruler-arrow"></div>
+		</div-->
+		<div class="editor-blank editor-blank-x"></div>
+		<div class="editor-area"></div>
+		<div class="editor-blank editor-blank-y"></div>
+	</div>
+	<div class="x-spliter right"><a class="collapser"></a></div>
+	<div class="layout property-box collapse" data-resizable="true" data-collapsible="true" data-min-width="300">
+		<div class="property-list-box"></div>
+		<div class="property-body-box"></div>
+	</div>
+</section>
+<footer>
+	<div class="status"></div>
+	<div class="copyright">copyright (c) 2015 Y-Soft.</div>
+</footer>
+</body>
+</html>

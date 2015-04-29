@@ -1,0 +1,179 @@
+.ia-event-title {
+	margin-bottom: 4px;
+}
+
+.ia-event-tool {
+	height: 29px;
+	list-style: outside none none;
+	margin: 0 0 4px;
+	overflow: hidden;
+	padding: 0;
+}
+
+.ia-event-tool li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.ia-event-tool .button {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	margin: 2px;
+	width: 24px;
+	height: 24px;
+}
+
+.ia-event-tool .button:hover {
+	background-color: #292929;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-event-tool .button.selected {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-event-tool .separator {
+	border-left: 1px solid #454545;
+	border-right: 1px solid #141414;
+	display: inline-block;
+	margin: 2px;
+	width: 0px;
+	height: 24px;
+}
+
+.button#btn-ia-event-tool-add {
+	background-image: url('../../../images/property/event/tool-add.png');
+}
+
+.button#btn-ia-event-tool-modify {
+	background-image: url('../../../images/property/event/tool-modify.png');
+}
+
+.button#btn-ia-event-tool-delete {
+	background-image: url('../../../images/property/event/tool-delete.png');
+}
+
+.button#btn-ia-event-tool-copy {
+	background-image: url('../../../images/property/event/tool-copy.png');
+}
+
+.button#btn-ia-event-tool-paste {
+	background-image: url('../../../images/property/event/tool-paste.png');
+}
+
+.button#btn-ia-event-tool-preview {
+	background-image: url('../../../images/property/event/tool-preview.png');
+}
+
+.ia-event-list {
+	border: 0;
+	border-spacing: 0;
+	-border: 1px solid #777;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: auto;
+	table-layout: fixed;
+}
+
+.ia-event-list tr {
+	border-spacing: 0;
+}
+
+.ia-event-list tr td:nth-child(1), .ia-event-list tr th:nth-child(1) {
+	border-left: 1px solid #777;
+}
+
+.ia-event-list tr td, .ia-event-list tr th {
+	background-color: transparent;
+	border-spacing: 0;
+	border-right: 1px solid #777;
+	cursor: default;
+	-display: inline-block;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ia-event-list tr th {
+	background-color: #555;
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 2px 4px;
+}
+
+.ia-event-list tr td {
+	border-bottom: 1px solid #777;
+	font-size: 11px;
+	padding: 4px;
+}
+
+.ia-event-list tr th:nth-child(1),
+.ia-event-list tr td:nth-child(1) {
+	text-align: center;
+	width: 16px;
+}
+
+.ia-event-list tr th:nth-child(2),
+.ia-event-list tr td:nth-child(2) {
+	text-align: center;
+	width: 80px;
+}
+
+.ia-event-list tr th:nth-child(3),
+.ia-event-list tr td:nth-child(3) {
+	text-align: center;
+	width: 60px;
+}
+
+.ia-event-list tr th:nth-child(4) {
+	text-align: center;
+}
+
+.ia-event-list .ia-event-item:hover {
+	background-color: #2a2a2a;
+}
+
+.ia-event-list .ia-event-item.selected {
+	background-color: #141414;
+}
+
+.ia-event-dlg label {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 4px;
+	text-align: right;
+	width: 80px;
+}
+
+.ia-event-dlg .field {
+	margin-bottom: 4px;
+}
+
+.ia-event-dlg .field.hidden {
+	display: none;
+}
+
+.ia-event-dlg .field input,
+.ia-event-dlg .field select {
+	border: 1px solid #777;
+	font-size: 12px;
+}
+
+.ia-event-dlg .field input {
+	width: 150px;
+}
+
+.ia-event-dlg .field select {
+	width: 154px;
+}

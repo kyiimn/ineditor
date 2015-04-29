@@ -1,0 +1,24 @@
+.ia-event-fireevent .field select {
+	width: 274px;
+}
+
+.ia-event-fireevent .field input {
+	width: 270px;
+}
+
+.ia-event-fireevent .field input#ia-event-fireevent-targetobj {
+	width: 225px;
+}
+
+.ia-event-fireevent button#ia-event-fireevent-targetobj-select {
+	margin-left: 5px;
+	width: 40px;
+}
+
+.ia-event-fireevent button:hover {
+	background-color: #555;
+}
+
+.ia-event-fireevent button:active {
+	background-color: #777;
+}

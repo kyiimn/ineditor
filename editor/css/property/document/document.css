@@ -1,0 +1,34 @@
+.ia-document-title {
+	margin-bottom: 4px;
+}
+
+.ia-document.field select.unit {
+	border-width: 1px;
+	margin-left: 4px;
+	width: 40px;
+}
+
+.ia-document.field select {
+	height: 16px;
+}
+
+.ia-document.field button {
+	border: 1px solid #777;
+	font-size: 9px;
+	height: 16px;
+	margin-left: 4px;
+	padding: 0 2px;
+	width: 48px;
+}
+
+.ia-document.field button.small {
+	width: 20px;
+}
+
+.ia-document.field button:hover {
+	background-color: #555;
+}
+
+.ia-document.field button:active {
+	background-color: #777;
+}

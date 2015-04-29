@@ -1,0 +1,176 @@
+.ia-audio-title {
+	margin-bottom: 4px;
+}
+
+.ia-audio-tool {
+	height: 29px;
+	list-style: outside none none;
+	margin: 0 0 4px;
+	overflow: hidden;
+	padding: 0;
+}
+
+.ia-audio-tool li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.ia-audio-tool .button,
+.ia-audio-tool .toggle {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	margin: 2px;
+	width: 24px;
+	height: 24px;
+}
+
+.ia-audio-tool .button:hover,
+.ia-audio-tool .toggle:hover {
+	background-color: #292929;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-audio-tool .button.selected,
+.ia-audio-tool .toggle.selected {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-audio-tool .separator {
+	border-left: 1px solid #454545;
+	border-right: 1px solid #141414;
+	display: inline-block;
+	margin: 2px;
+	width: 0px;
+	height: 24px;
+}
+
+.button#btn-ia-audio-tool-modify {
+	background-image: url('../../../images/property/audio/tool-modify.png');
+}
+
+.button#btn-ia-audio-tool-delete {
+	background-image: url('../../../images/property/audio/tool-delete.png');
+}
+
+.toggle#btn-ia-audio-tool-autoplay {
+	background-image: url('../../../images/property/audio/tool-autoplay.png');
+}
+
+.toggle#btn-ia-audio-tool-control {
+	background-image: url('../../../images/property/audio/tool-control.png');
+}
+
+.toggle#btn-ia-audio-tool-loop {
+	background-image: url('../../../images/property/audio/tool-loop.png');
+}
+
+.ia-audio-preview {
+	border: 1px solid #777;
+	margin-bottom: 4px;
+	-overflow: hidden;
+}
+
+.ia-audio-preview audio {
+	width: 100%;
+}
+
+.ia-audio-list {
+	border: 0;
+	border-spacing: 0;
+	-border: 1px solid #777;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: auto;
+	table-layout: fixed;
+}
+
+.ia-audio-list tr {
+	border-spacing: 0;
+}
+
+.ia-audio-list tr td:nth-child(1), .ia-audio-list tr th:nth-child(1) {
+	border-left: 1px solid #777;
+}
+
+.ia-audio-list tr td, .ia-audio-list tr th {
+	background-color: transparent;
+	border-spacing: 0;
+	border-right: 1px solid #777;
+	cursor: default;
+	-display: inline-block;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ia-audio-list tr th {
+	background-color: #555;
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 2px 4px;
+}
+
+.ia-audio-list tr td {
+	border-bottom: 1px solid #777;
+	font-size: 11px;
+	padding: 4px;
+}
+
+.ia-audio-list tr th:nth-child(1) {
+	text-align: center;
+}
+
+.ia-audio-list tr th:nth-child(2),
+.ia-audio-list tr td:nth-child(2) {
+	text-align: center;
+	width: 80px;
+}
+
+.ia-audio-list .ia-audio-item:hover {
+	background-color: #2a2a2a;
+}
+
+.ia-audio-list .ia-audio-item.selected {
+	background-color: #141414;
+}
+
+.ia-audio-dlg label {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 4px;
+	text-align: right;
+	width: 70px;
+}
+
+.ia-audio-dlg .field {
+	margin-bottom: 4px;
+}
+
+.ia-audio-dlg .field.hidden {
+	display: none;
+}
+
+.ia-audio-dlg .field input,
+.ia-audio-dlg .field select {
+	border: 1px solid #777;
+	font-size: 12px;
+}
+
+.ia-audio-dlg .field input {
+	width: 150px;
+}
+
+.ia-audio-dlg .field select {
+	width: 154px;
+}

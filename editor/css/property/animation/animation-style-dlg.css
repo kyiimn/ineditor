@@ -1,0 +1,143 @@
+.ia-animation-style .field input {
+	width: 282px;
+}
+
+.ia-animation-style button#ia-animation-style-targetobj-select {
+	margin-left: 5px;
+	width: 40px;
+}
+
+.ia-animation-style button:hover {
+	background-color: #555;
+}
+
+.ia-animation-style button:active {
+	background-color: #777;
+}
+
+.ia-animation-style .ia-animation-style-list {
+	border: 0;
+	border-spacing: 0;
+	-border: 1px solid #777;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: auto;
+	table-layout: fixed;
+}
+
+.ia-animation-style .ia-animation-style-list tr {
+	border-spacing: 0;
+}
+
+.ia-animation-style .ia-animation-style-list tr td:nth-child(1),
+.ia-animation-style .ia-animation-style-list tr th:nth-child(1) {
+	border-left: 1px solid #777;
+}
+
+.ia-animation-style .ia-animation-style-list tr td,
+.ia-animation-style .ia-animation-style-list tr th {
+	background-color: transparent;
+	border-spacing: 0;
+	border-right: 1px solid #777;
+	cursor: default;
+	-display: inline-block;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ia-animation-style .ia-animation-style-list tr th {
+	background-color: #555;
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 2px 4px;
+	text-align: center;
+}
+
+.ia-animation-style .ia-animation-style-list tr td {
+	border-bottom: 1px solid #777;
+	font-size: 11px;
+	text-align: center;
+}
+
+.ia-animation-style .ia-animation-style-list tr th:nth-child(1),
+.ia-animation-style .ia-animation-style-list tr td:nth-child(1) {
+	width: 170px;
+}
+
+.ia-animation-style .ia-animation-style-list tr th:nth-child(2),
+.ia-animation-style .ia-animation-style-list tr td:nth-child(2) {
+	width: 110px;
+}
+
+.ia-animation-style .ia-animation-style-list tr td:nth-child(1) {
+	padding: 4px;
+}
+
+.ia-animation-style .ia-animation-style-list tr td:nth-child(2) {
+	-padding: 4px;
+}
+
+.ia-animation-style .ia-animation-style-list tr td:nth-child(3) {
+	-padding: 4px;
+}
+
+.ia-animation-style .ia-animation-style-list tr td .value {
+	background-color: transparent;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.ia-animation-style .ia-animation-style-list tbody tr:hover {
+	background-color: #2a2a2a;
+}
+
+.ia-animation-style .ia-animation-style-list tbody tr.selected {
+	background-color: #141414;
+}
+
+.ia-animation-style .footer {
+	background-color: #555;
+	border-color: #777;
+	border-style: solid;
+	border-width: 0 1px 1px;
+	height: 20px;
+}
+
+.ia-animation-style .button {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	margin: 1px;
+	width: 16px;
+	height: 16px;
+}
+
+.ia-animation-style .button:hover {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.button#btn-ia-animation-style-footer-add {
+	background-image: url('../../../images/property/event/list-add.png');
+}
+
+.button#btn-ia-animation-style-footer-delete {
+	background-image: url('../../../images/property/event/list-delete.png');
+}
+
+.button#btn-ia-animation-style-footer-detect {
+	background-image: url('../../../images/property/event/list-detect.png');
+	float: right;
+}

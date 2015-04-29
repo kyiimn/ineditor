@@ -1,0 +1,153 @@
+.ia-script-title {
+	margin-bottom: 4px;
+}
+
+.ia-script-tool {
+	height: 29px;
+	list-style: outside none none;
+	margin: 0 0 4px;
+	overflow: hidden;
+	padding: 0;
+}
+
+.ia-script-tool li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.ia-script-tool .button {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	margin: 2px;
+	width: 24px;
+	height: 24px;
+}
+
+.ia-script-tool .button:hover {
+	background-color: #292929;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-script-tool .button.selected {
+	background-color: #141414;
+	border: 1px solid #020202;
+	border-radius: 5px;
+}
+
+.ia-script-tool .separator {
+	border-left: 1px solid #454545;
+	border-right: 1px solid #141414;
+	display: inline-block;
+	margin: 2px;
+	width: 0px;
+	height: 24px;
+}
+
+.button#btn-ia-script-tool-add-source {
+	background-image: url('../../../images/property/script/tool-add-source.png');
+}
+
+.button#btn-ia-script-tool-add-link {
+	background-image: url('../../../images/property/script/tool-add-link.png');
+}
+
+.button#btn-ia-script-tool-modify {
+	background-image: url('../../../images/property/script/tool-modify.png');
+}
+
+.button#btn-ia-script-tool-delete {
+	background-image: url('../../../images/property/script/tool-delete.png');
+}
+
+.ia-script-list {
+	border: 0;
+	border-spacing: 0;
+	-border: 1px solid #777;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: auto;
+	table-layout: fixed;
+}
+
+.ia-script-list tr {
+	border-spacing: 0;
+}
+
+.ia-script-list tr td:nth-child(1), .ia-script-list tr th:nth-child(1) {
+	border-left: 1px solid #777;
+}
+
+.ia-script-list tr td, .ia-script-list tr th {
+	background-color: transparent;
+	border-spacing: 0;
+	border-right: 1px solid #777;
+	cursor: default;
+	-display: inline-block;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ia-script-list tr th {
+	background-color: #555;
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 2px 4px;
+}
+
+.ia-script-list tr td {
+	border-bottom: 1px solid #777;
+	font-size: 11px;
+	padding: 4px;
+}
+
+.ia-script-list tr th:nth-child(1) {
+	text-align: center;
+}
+
+.ia-script-list .ia-script-item:hover {
+	background-color: #2a2a2a;
+}
+
+.ia-script-list .ia-script-item.selected {
+	background-color: #141414;
+}
+
+.ia-script-dlg label {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 4px;
+	text-align: right;
+	width: 70px;
+}
+
+.ia-script-dlg .field {
+	margin-bottom: 4px;
+}
+
+.ia-script-dlg .field.hidden {
+	display: none;
+}
+
+.ia-script-dlg .field input,
+.ia-script-dlg .field select {
+	border: 1px solid #777;
+	font-size: 12px;
+}
+
+.ia-script-dlg .field input {
+	width: 150px;
+}
+
+.ia-script-dlg .field select {
+	width: 154px;
+}

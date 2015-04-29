@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule (.*) ../datafile.php?fn=$1 [L]
