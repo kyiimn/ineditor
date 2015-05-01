@@ -22,7 +22,7 @@ function docPublishMakeHTML($xmlPath, $outputPath) {
 			return false;
 		}
 	} else {
-		mkdir($outputPath);
+		mkdir($outputPath, 0775, true);
 	}
 
 	if (!unlinkIndoc($outputPath)) {

@@ -85,7 +85,7 @@ function docSave($recvData) {
 				}
 			}
 		} else {
-			if (!mkdir($path, 0777, true)) {
+			if (!mkdir($path, 0775, true)) {
 				$ERROR = 'DOCU0006';
 				return;
 			}

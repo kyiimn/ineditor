@@ -2,7 +2,7 @@
 function imageGetImageDir($docid) {
 	$path = pathGetImageDir($docid);
 	if (!file_exists($path)) {
-		if (!mkdir($path, 0777, true)) return false;
+		if (!mkdir($path, 0775, true)) return false;
 	}
 	return $path;
 }

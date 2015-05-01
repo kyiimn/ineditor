@@ -1,6 +1,6 @@
 <?php
 function loginFBGetID($fbid) {
-	if (!file_exists(EDITOR_DB)) mkdir(EDITOR_DB, 0755, true);
+	if (!file_exists(EDITOR_DB)) mkdir(EDITOR_DB, 0775, true);
 
 	$dbconn = new PDO('sqlite:'.EDITOR_DB.'/users.db');
 	$dbconn->exec('CREATE TABLE IF NOT EXISTS fb_users (fbid STRING PRIMARY KEY, id STRING)');

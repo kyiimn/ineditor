@@ -3,7 +3,7 @@ function copyAll($src, $dst) {
 	$dir = opendir($src);
 
 	if (!file_exists($dst)) {
-		if (!mkdir($dst, 0755, true)) return false;
+		if (!mkdir($dst, 0775, true)) return false;
 	}
 	while (false !== ($file = readdir($dir))) {
 		if (($file != '.') && ($file != '..')) {
