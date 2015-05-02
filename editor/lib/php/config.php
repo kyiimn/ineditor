@@ -9,8 +9,8 @@ define('EDITOR_PREVIEW', EDITOR_HOME.'/preview');
 
 define('EDITOR_DB', EDITOR_HOME.'/db');
 
-define('FB_API', '864202943672216');
-define('FB_SECRET', 'c156f04f8ec10452e024d0fbee69c0de');
+define('USER_DATA_AUTODEL', '0');
+define('USER_QUOTA', '10485760');
 
 session_start();
 ?>

@@ -7,8 +7,9 @@ function docLoadList($data) {
 		$RESPONSE['list'] = array();
 		return;
 	}
-
 	$list = array();
+	$totalSize = 0;
+
 	if (file_exists($path) && $dirs = opendir($path)) {
 		while (($dir = readdir($dirs)) !== false) {
 			$fullPath = sprintf('%s/%s', $path, $dir);
@@ -26,6 +27,9 @@ function docLoadList($data) {
 			$title = $info['title'];
 			$orientation = $info['orientation'];
 			$preview = $info['preview'];
+			$size = $info['size'];
+			
+			$totalSize += intval($size);
 
 			$mdate = filemtime($fullPath);
 			if (!$mdate) $mdate = fileatime($fullPath);
@@ -35,6 +39,7 @@ function docLoadList($data) {
 				'date' => ($mdate) ? date('Y-m-d', $mdate) : '',
 				'timestamp' => $mdate,
 				'preview' => $preview,
+				'size' => $size,
 				'orientation' => $orientation
 			);
 		}
@@ -43,6 +48,7 @@ function docLoadList($data) {
 	usort($list, create_function('$a,$b', 'return filemtime($a["timestamp"]) < filemtime($b["timestamp"]);'));
 
 	$RESPONSE['list'] = $list;
+	$RESPONSE['totalSize'] = $totalSize;
 }
 
 function docSave($recvData) {
@@ -91,8 +97,10 @@ function docSave($recvData) {
 			}
 		}
 	}
-	$xmlInfo = docSaveInfoXML($rawData);
 	$xmlDoc = docSaveMakeXML($rawData);
+	
+	$totalSize = getDirSize($path);
+	$xmlInfo = docSaveInfoXML($rawData, $totalSize);
 
 	if (!file_put_contents($fileInfo, $xmlInfo)) {
 		$ERROR = 'DOCU0004';
@@ -108,7 +116,7 @@ function docSave($recvData) {
 	$RESPONSE['ratio'] = $ratio;
 }
 
-function docSaveInfoXML($data) {
+function docSaveInfoXML($data, $totalSize = 0) {
 	$editor = $data['editor'];
 	$version = $data['version'];
 
@@ -148,6 +156,11 @@ function docSaveInfoXML($data) {
 	$docPreview = $xml->createElement('preview');
 	$docPreview->appendChild($xml->createCDATASection($preview));
 	$doc->appendChild($docPreview);
+	
+	// INDocument/size
+	$docSize = $xml->createElement('size');
+	$docSize->appendChild($xml->createCDATASection($totalSize));
+	$doc->appendChild($docSize);
 
 	return $xml->saveXML();
 }
@@ -313,7 +326,8 @@ function docLoadInfoXML($path) {
 		'id' => (string)$xml->info->id,
 		'title' => (string)$xml->info->title,
 		'orientation' => (string)$xml->info->orientation,
-		'preview' => (string)$xml->preview
+		'preview' => (string)$xml->preview,
+		'size' => (string)$xml->size
 	);
 }
 

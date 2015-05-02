@@ -107,4 +107,25 @@ function unlinkIndoc($dir) {
 	}
 	return true;
 }
+
+function getDirSize($path) {
+    $total = 0;
+    $files = scandir($path);
+    $fullPath = rtrim($path, '/'). '/';
+
+    foreach($files as $file) {
+        if ($file !== '.' && $file !== '..') {
+            $curFile = $fullPath . $file;
+            if (is_dir($curFile)) {
+                $size = getDirSize($curFile);
+                $total += $size;
+            }
+            else {
+                $size = filesize($curFile);
+                $total += $size;
+            }
+        }   
+    }
+    return $total;
+}
 ?>
