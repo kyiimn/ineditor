@@ -1,19 +1,11 @@
 <?php
-function imageGetImageDir($docid) {
-	$path = pathGetImageDir($docid);
-	if (!file_exists($path)) {
-		if (!mkdir($path, 0775, true)) return false;
-	}
-	return $path;
-}
-
 function imageRegUploadedFiles($recvData) {
 	global $ERROR, $RESPONSE;
 
 	$list = $recvData['list'];
 	$listCnt = (is_array($list)) ? count($list) : 0;
 
-	$imageDir = imageGetImageDir($recvData['docid']);
+	$imageDir = pathGetImageDir($recvData['docid']);
 	if (!$imageDir) {
 		$ERROR = 'IMAG0001';
 		return false;
@@ -48,8 +40,7 @@ function imageRegUploadedFiles($recvData) {
 		);
 	}
 	if ($errFlg) {
-		$i--;
-		for (max($i, 0); $i < $listCnt; $i++) {
+		for (; $i < $listCnt; $i++) {
 			$tmpPath = sprintf('%s/%s', $tmpDir, $list[$i]['name']);
 			unlink($tmpPath);
 		}
