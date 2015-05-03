@@ -12,23 +12,41 @@ function mediaRegUploadedFiles($recvData) {
 	}
 	$RESPONSE['list'] = array();
 
+	$errFlg = false;
+	$uploadedFiles = array();
+
 	for ($i = 0; $i < $listCnt; $i++) {
 		$tmpDir = uploadGetTempDir($list[$i]['uploaddate']);
 		if (!$tmpDir) {
 			$ERROR = 'MEDI0002';
-			return false;
+			$errFlg = true;
+			break;
 		}
 		$tmpPath = sprintf('%s/%s', $tmpDir, $list[$i]['name']);
 		$mediaPath = sprintf('%s/%s', $mediaDir, $list[$i]['name']);
 
 		if (!rename($tmpPath, $mediaPath)) {
 			$ERROR = 'MEDI0003';
-			return false;
+			$errFlg = true;
+			break;
 		}
+		$uploadedFiles[] = $mediaPath;
+
 		$RESPONSE['list'][] = array(
 			'name' => $list[$i]['name'],
 			'type' => $list[$i]['type']
 		);
+	}
+	if ($errFlg) {
+		for (; $i < $listCnt; $i++) {
+			$tmpPath = sprintf('%s/%s', $tmpDir, $list[$i]['name']);
+			unlink($tmpPath);
+		}
+		$uploadedFileCnt = (is_array($uploadedFiles) ? count($uploadedFiles) : 0);
+		for ($i = 0; $i < $uploadedFileCnt; $i++) {
+			unlink($uploadedFiles[$i]);
+		}
+		return false;
 	}
 	$RESPONSE['docid'] = $recvData['docid'];
 

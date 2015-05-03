@@ -19,27 +19,45 @@ function imageRegUploadedFiles($recvData) {
 		return false;
 	}
 	$RESPONSE['list'] = array();
+	
+	$errFlg = false;
+	$uploadedFiles = array();
 
 	for ($i = 0; $i < $listCnt; $i++) {
 		$tmpDir = uploadGetTempDir($list[$i]['uploaddate']);
 		if (!$tmpDir) {
 			$ERROR = 'IMAG0002';
-			return false;
+			$errFlg = true;
+			break;
 		}
 		$tmpPath = sprintf('%s/%s', $tmpDir, $list[$i]['name']);
 		$imagePath = sprintf('%s/%s', $imageDir, $list[$i]['name']);
 
 		if (!rename($tmpPath, $imagePath)) {
 			$ERROR = 'IMAG0003';
-			return false;
+			$errFlg = true;
+			break;
 		}
 		$size = getimagesize($imagePath);
+		$uploadedFiles[] = $imagePath;
 
 		$RESPONSE['list'][] = array(
 			'width' => $size[0],
 			'height' => $size[1],
 			'name' => $list[$i]['name']
 		);
+	}
+	if ($errFlg) {
+		$i--;
+		for (max($i, 0); $i < $listCnt; $i++) {
+			$tmpPath = sprintf('%s/%s', $tmpDir, $list[$i]['name']);
+			unlink($tmpPath);
+		}
+		$uploadedFileCnt = (is_array($uploadedFiles) ? count($uploadedFiles) : 0);
+		for ($i = 0; $i < $uploadedFileCnt; $i++) {
+			unlink($uploadedFiles[$i]);
+		}
+		return false;
 	}
 	$RESPONSE['docid'] = $recvData['docid'];
 

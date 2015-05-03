@@ -50,7 +50,7 @@ function pathGetFileDir($docid, $type, $fullpath = true) {
 
 		$path = sprintf('%s/%s/%s', EDITOR_DATA, $userInfo['id'], $path);
 		if (!file_exists($path)) {
-			if (!mkdir($path, 0777, true)) return false;
+			if (!mkdir($path, 0775, true)) return false;
 		}
 	}
 	return $path;
@@ -61,7 +61,11 @@ function pathGetImageDir($docid) {
 	if (!$userInfo) return false;
 	if (!$docid) return false;
 
-	return sprintf('%s/%s/%s/images', EDITOR_DATA, $userInfo['id'], $docid);
+	$path = sprintf('%s/%s/%s/images', EDITOR_DATA, $userInfo['id'], $docid);
+	if (!file_exists($path)) {
+		if (!mkdir($path, 0775, true)) return false;
+	}
+	return $path;
 }
 
 function pathGetMediaDir($docid, $type) {
@@ -72,7 +76,7 @@ function pathGetMediaDir($docid, $type) {
 
 	$path = sprintf('%s/%s/%s/media/%s', EDITOR_DATA, $userInfo['id'], $docid, $type);
 	if (!file_exists($path)) {
-		if (!mkdir($path, 0777, true)) return false;
+		if (!mkdir($path, 0775, true)) return false;
 	}
 	return $path;
 }
