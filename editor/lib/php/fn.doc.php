@@ -79,6 +79,11 @@ function docSave($recvData) {
 			return;
 		}
 		if (file_exists($oldPath)) {
+			$oldDataSize = getDirSize($oldPath);
+			if (!checkQuotaAddData($oldDataSize)) {
+				$ERROR = 'DOCU0010';
+				return;
+			}			
 			if ($editMode == 'new') {
 				if (!rename($oldPath, $path)) {
 					$ERROR = 'DOCU0001';

@@ -25,6 +25,11 @@ function imageRegUploadedFiles($recvData) {
 		$tmpPath = sprintf('%s/%s', $tmpDir, $list[$i]['name']);
 		$imagePath = sprintf('%s/%s', $imageDir, $list[$i]['name']);
 
+		$tmpSize = filesize($tmpPath);
+		if (!checkQuotaAddData($tmpSize)) {
+			$ERROR = 'IMAG0004';
+			return;
+		}			
 		if (!rename($tmpPath, $imagePath)) {
 			$ERROR = 'IMAG0003';
 			$errFlg = true;

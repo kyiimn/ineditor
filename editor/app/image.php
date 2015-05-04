@@ -4,6 +4,7 @@ include_once ('../lib/php/fn.login.php');
 include_once ('../lib/php/fn.upload.php');
 include_once ('../lib/php/fn.image.php');
 include_once ('../lib/php/fn.path.php');
+include_once ('../lib/php/fn.misc.php');
 include_once ('request.php');
 
 $userInfo = loginGetInfo();

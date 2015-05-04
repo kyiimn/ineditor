@@ -25,6 +25,11 @@ function mediaRegUploadedFiles($recvData) {
 		$tmpPath = sprintf('%s/%s', $tmpDir, $list[$i]['name']);
 		$mediaPath = sprintf('%s/%s', $mediaDir, $list[$i]['name']);
 
+		$tmpSize = filesize($tmpPath);
+		if (!checkQuotaAddData($tmpSize)) {
+			$ERROR = 'MEDI0004';
+			return;
+		}			
 		if (!rename($tmpPath, $mediaPath)) {
 			$ERROR = 'MEDI0003';
 			$errFlg = true;

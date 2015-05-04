@@ -128,4 +128,19 @@ function getDirSize($path) {
     }
     return $total;
 }
+
+function getUserDataSize() {
+	$path = pathGetDataDir();
+	if (!$path) return false;
+	return getDirSize($path);
+}
+
+function checkQuotaAddData($addSize = 0) {
+	if (USER_QUOTA == 0) return true;
+	
+	$userSize = getUserDataSize();
+	if (($userSize + $addSize) > USER_QUOTA) return false;
+	
+	return true;
+}
 ?>
