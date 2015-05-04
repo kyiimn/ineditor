@@ -8,5 +8,6 @@ js
 lib
 editor/db/users.db
 editor/data/*
+editor/temp/*
 !editor/data/.htaccess
 !editor/data/web.config
