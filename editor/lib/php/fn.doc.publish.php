@@ -88,7 +88,7 @@ function docPublishMakeTransitionCSS($objects) {
 }
 
 function docPublishMakeStyleCSS($data) {
-	global $IMAGE_LIST;
+	global $PREVIEW;
 
 	$css = "body {\n";
 	foreach ($data['css'] as $key => $value) {
@@ -96,9 +96,12 @@ function docPublishMakeStyleCSS($data) {
 		switch (strtolower($key)) {
 			case 'background-image':
 				if ($value[0] != '') {
-					$css .= sprintf("	%s: url(../images/%s);\n", $key, $value[0]);
-					if (!is_array($IMAGE_LIST)) $IMAGE_LIST = array();
-					$IMAGE_LIST[] = $value[0];
+					if ($PREVIEW) {
+						$css .= sprintf("	%s: url(%s%s);\n", $key, pathGetPreviewDir($data['id'], 'image'), $value[0]);
+					} else {
+						$css .= sprintf("	%s: url(../images/%s);\n", $key, $value[0]);
+					}
+					docPublishAddImageList($value[0]);
 				}
 				break;
 			default:
@@ -121,7 +124,7 @@ function docPublishMakeStyleCSS($data) {
 }
 
 function docPublishMakeObjectJS($docid, $objects, $outputPath) {
-	global $PREVIEW, $IMAGE_LIST;
+	global $PREVIEW;
 
 	$objectCnt = (is_array($objects)) ? count($objects) : 0;
 
@@ -140,8 +143,7 @@ function docPublishMakeObjectJS($docid, $objects, $outputPath) {
 				}
 			} else {
 				if ($key == 'background-image' && $value[0] != 'initial') {
-					if (!is_array($IMAGE_LIST)) $IMAGE_LIST = array();
-					$IMAGE_LIST[] = $value[0];
+					docPublishAddImageList($value[0]);
 				}
 				$dataCss[$key] = $value[0];
 			}
@@ -174,15 +176,13 @@ function docPublishMakeObjectJS($docid, $objects, $outputPath) {
 				if (!$size) continue;
 				$image['width'] = $size[0];
 				$image['height'] = $size[1];
-
 				$images[] = $image;
-
-				if ($image['type'] == 'server') {
-					if (!is_array($IMAGE_LIST)) $IMAGE_LIST = array();
-					$IMAGE_LIST[] = $image['name'];
-				}
+				
+				if ($image['type'] == 'server') docPublishAddImageList($image['name']);
 			}
 			$data['data']['image']['list'] = $images;
+		} else if ($data['type'] == 'audio') {
+		} else if ($data['type'] == 'video') {
 		}
 		$js .= sprintf("G_OBJECT_DATA['%s'] = %s;\n", $objects[$i]['id'], json_encode($data));
 		$js .= docPublishMakeObjectJS($docid, $objects[$i]['items'], $outputPath);
@@ -190,8 +190,20 @@ function docPublishMakeObjectJS($docid, $objects, $outputPath) {
 	return $js;
 }
 
+function docPublishAddImageList($image) {
+	global $IMAGE_LIST;
+	if (!is_array($IMAGE_LIST)) $IMAGE_LIST = array();
+	$IMAGE_LIST[] = $image;
+}
+
+function docPublishGetImageList() {
+	global $IMAGE_LIST;
+	if (!is_array($IMAGE_LIST)) $IMAGE_LIST = array();
+	return $IMAGE_LIST;
+}
+
 function docPublishMakeDataJS($data, $outputPath) {
-	global $PREVIEW, $IMAGE_LIST;
+	global $PREVIEW;
 
 	$config = array(
 		'id' => $data['id'],
@@ -210,9 +222,10 @@ function docPublishMakeDataJS($data, $outputPath) {
 	$js .= sprintf("var G_BODY_DATA = %s;\n", json_encode($data['data']));
 	$js .= "var G_IMAGE_LIST = [];\n";
 
-	$imageCnt = (is_array($IMAGE_LIST)) ? count($IMAGE_LIST) : 0;
+	$imageList = docPublishGetImageList();
+	$imageCnt = (is_array($imageList)) ? count($imageList) : 0;
 	for ($i = 0; $i < $imageCnt; $i++) {
-		$js .= sprintf("G_IMAGE_LIST.push('%s');\n", $IMAGE_LIST[$i]);
+		$js .= sprintf("G_IMAGE_LIST.push('%s');\n", $imageList[$i]);
 	}
 	$js .= "\n";
 
