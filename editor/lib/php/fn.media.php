@@ -1,6 +1,6 @@
 <?php
 function mediaRegUploadedFiles($recvData) {
-	global $ERROR, $RESPONSE;
+	global $ERROR, $ERRORDATA, $RESPONSE;
 
 	$list = $recvData['list'];
 	$listCnt = (is_array($list)) ? count($list) : 0;
@@ -29,7 +29,12 @@ function mediaRegUploadedFiles($recvData) {
 		if (!checkQuotaAddData($tmpSize)) {
 			$ERROR = 'MEDI0004';
 			return;
-		}			
+		}
+		if (file_exists($mediaPath)) {
+			$ERROR = 'MEDI0005';
+			$ERRORDATA = $list[$i]['name'];
+			return;
+		}
 		if (!rename($tmpPath, $mediaPath)) {
 			$ERROR = 'MEDI0003';
 			$errFlg = true;

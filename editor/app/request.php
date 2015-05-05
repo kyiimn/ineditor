@@ -10,14 +10,16 @@ $FN = strtolower($RECVDATA['fn']);
 
 $RESPONSE = array();
 $ERROR = false;
+$ERRORDATA = false;
 
 function response() {
-	global $RESPONSE, $ERROR;
+	global $RESPONSE, $ERROR, $ERRORDATA;
 
 	$result = array();
 	$result['data'] = $RESPONSE;
 	if ($ERROR) {
 		$result['msg'] = $ERROR;
+		$result['errdata'] = $ERRORDATA;
 		$result['success'] = false;
 	} else {
 		$result['success'] = true;

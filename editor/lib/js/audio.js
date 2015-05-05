@@ -19,7 +19,9 @@ function audioAddUploadedFile(options) {
 
 				waitbarHide();
 				if (!response.success) {
-					alert(MESSAGEERR[response.msg]);
+					var msg = MESSAGEERR[response.msg];
+					if (response.errdata) msg += " (" + response.errdata + ')';
+					alert(msg);
 					return;
 				}
 				$.each(response.data.list, function (idx, val) {
