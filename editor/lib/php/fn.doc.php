@@ -115,6 +115,8 @@ function docSave($recvData) {
 		$ERROR = 'DOCU0005';
 		return;
 	}
+	docSaveCleanUp($id);
+	
 	$RESPONSE['id'] = $id;
 	$RESPONSE['title'] = $title;
 	$RESPONSE['orientation'] = $orientation;
@@ -220,6 +222,14 @@ function docSaveMakeXML($data) {
 	foreach ($bgCss as $key => $value) {
 		$docBackgroundStyle = $xml->createElement('style');
 		$docBackgroundStyle->setAttribute("key", $key);
+		
+		if ($key == 'background-image') {
+			if (is_array($value)) {
+				if ($value[0] != '') docSaveAddDataList($value[0]);
+			} else {
+				if ($value != '') docSaveAddDataList($value);
+			}
+		}
 		if (is_array($value)) {
 			if (count($value) > 1) {
 				$docBackgroundStyle->setAttribute("value", $value[0]);
@@ -260,6 +270,14 @@ function docSaveMakeObjectXML($xml, $objects, $nodeName = 'items') {
 		foreach ($objects[$i]['css'] as $key => $value) {
 			$docStyle = $xml->createElement('style');
 			$docStyle->setAttribute("key", $key);
+			
+			if ($key == 'background-image') {
+				if (is_array($value)) {
+					if ($value[0] != '') docSaveAddDataList($value[0]);
+				} else {
+					if ($value != '') docSaveAddDataList($value);
+				}
+			}
 			if (is_array($value)) {
 				if (count($value) > 1) {
 					$docStyle->setAttribute("value", $value[0]);
@@ -285,6 +303,13 @@ function docSaveMakeObjectXML($xml, $objects, $nodeName = 'items') {
 
 function docSaveMakeDataXML($xml, $data, $nodeName) {
 	$docNode = $xml->createElement($nodeName);
+	
+	if ($nodeName == 'image') {
+		foreach ($data['list'] as $item) docSaveAddDataList($item['name']);
+	} else if ($nodeName == 'audio') {
+		foreach ($data['list'] as $item) docSaveAddDataList($item['name']);
+	} else if ($nodeName == 'video') {
+	}
 
 	if (is_array($data)) {
 		if (isset($data[0])) {
@@ -307,6 +332,52 @@ function docSaveMakeDataXML($xml, $data, $nodeName) {
 		$docNode->appendChild($xml->createCDATASection($data));
 	}
 	return $docNode;
+}
+
+function docSaveAddDataList($datafile) {
+	global $DATA_LIST;
+	if (!is_array($DATA_LIST)) $DATA_LIST = array();
+	$DATA_LIST[] = $datafile;
+}
+
+function docSaveGetDataList() {
+	global $DATA_LIST;
+	if (!is_array($DATA_LIST)) $DATA_LIST = array();
+	return $DATA_LIST;
+}
+
+function docSaveCleanUp($docid) {
+	$dataList = docSaveGetDataList();
+	
+	// images
+	$path = pathGetFileDir($docid, 'image');
+	$files = getFileList($path);
+	foreach ($files as $file) {
+		if (!in_array(basename($file), $dataList)) {
+			$target = sprintf('%s%s', $path, $file);
+			unlink($target);
+		}
+	}
+	
+	// audios
+	$path = pathGetFileDir($docid, 'audio');
+	$files = getFileList($path);
+	foreach ($files as $file) {
+		if (!in_array(basename($file), $dataList)) {
+			$target = sprintf('%s%s', $path, $file);
+			unlink($target);
+		}
+	}
+	
+	// videos
+	$path = pathGetFileDir($docid, 'video');
+	$files = getFileList($path);
+	foreach ($files as $file) {
+		if (!in_array(basename($file), $dataList)) {
+			$target = sprintf('%s%s', $path, $file);
+			unlink($target);
+		}
+	}
 }
 
 function docLoad($recvData) {

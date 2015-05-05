@@ -53,6 +53,8 @@ function getimagesizeEx($loc) {
 function getFileList($root, $path = '') {
 	$list = array();
 
+	if ($path != '' && substr($path, -1) != '/') $path = $path.'/';
+
 	$dir = opendir($root.'/'.$path);
 	while (false !== ($file = readdir($dir))) {
 		if (($file != '.') && ($file != '..')) {
